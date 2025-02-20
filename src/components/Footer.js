@@ -1,7 +1,7 @@
 "use client";
 
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 import { FiFacebook } from "react-icons/fi";
 import { BsInstagram } from "react-icons/bs";
 import styles from "@/styles/Footer.module.css";
@@ -74,6 +74,11 @@ const Footer = () => {
                   <li>
                     <Link href="#" title="Twitter">
                       <FaXTwitter />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#" title="LinkedIn">
+                      <FaLinkedinIn />
                     </Link>
                   </li>
                 </ul>
