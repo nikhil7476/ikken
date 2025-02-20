@@ -19,7 +19,7 @@ const Header = () => {
               xs={12}
               className="align-content-center"
             >
-              <Link href="/" title="Ikken" className="global-underline">
+              <Link href="/" title="Ikken">
                 <Image
                   src="/ikken-logo.webp"
                   alt="Ikken-Logo"
