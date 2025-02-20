@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function Home() {
   return (
@@ -11,7 +12,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.main}>
-        <h1>Home</h1>
+        <section>
+          <Container>
+            <Row>
+              <Col>
+                <h1>Home</h1>
+              </Col>
+            </Row>
+          </Container>
+        </section>
       </div>
     </>
   );
