@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { Nav, Container, Row, Col } from "react-bootstrap";
 import styles from "@/styles/Header.module.css";
+import { FaSearch } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -10,7 +11,14 @@ const Header = () => {
       <div className={styles.hdr}>
         <Container className="pt-4 pb-4">
           <Row>
-            <Col xl={6} lg={6} md={6} sm={6} xs={6}>
+            <Col
+              xl={6}
+              lg={6}
+              md={6}
+              sm={6}
+              xs={6}
+              className="align-content-center"
+            >
               <Link href="/" title="Ikken" className="global-underline">
                 <Image
                   src="/ikken-logo.webp"
@@ -22,7 +30,14 @@ const Header = () => {
                 />
               </Link>
             </Col>
-            <Col xl={6} lg={6} md={6} sm={6} xs={6}>
+            <Col
+              xl={6}
+              lg={6}
+              md={6}
+              sm={6}
+              xs={6}
+              className="align-content-center"
+            >
               <Nav className="justify-content-end" activeKey="/home">
                 <Nav.Item>
                   <Nav.Link href="/" title="Home">
@@ -42,6 +57,13 @@ const Header = () => {
                 <Nav.Item>
                   <Nav.Link href="/contact" title="Contact">
                     Contact
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="#" title="Search">
+                    <FaSearch
+                      style={{ fontSize: "20px", marginBottom: "10px" }}
+                    />
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
