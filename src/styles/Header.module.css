@@ -1,0 +1,14 @@
+@media only screen and (max-width: 770px) {
+  .hdrRow a img {
+    position: relative;
+    z-index: 999;
+  }
+
+  .hdrNav {
+    margin-top: -10% !important;
+  }
+
+  .hdrLnk {
+    margin-top: 30px !important;
+  }
+}

@@ -72,9 +72,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px 0 0;
 }
 
-
-
 /*Header CSS*/
+
 .nav-link {
   font-family: var(--font-josefin-sans) !important;
   font-size: 20px !important;
@@ -84,4 +83,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link:hover {
   background-size: 100% 10% !important;
+}
+
+/*Media Query*/
+
+@media only screen and (max-width: 770px) {
+  .nav-link:hover {
+    background-size: 20% 10% !important;
+  }
+
 }
