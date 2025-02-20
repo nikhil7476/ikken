@@ -1,0 +1,105 @@
+.ftrMain {
+  background-image: url(/footer.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 100px 0px;
+}
+
+.subscribeContainer {
+  text-align: center;
+  padding: 70px 50px !important;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.heading {
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 1.35;
+  margin: 0 20px;
+  padding: 15px 0;
+  letter-spacing: -0.018em;
+  word-spacing: -0.05em;
+}
+
+.form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.input {
+  border-bottom: 2px solid #0f0f0f !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0px !important;
+  font-size: 20px;
+  font-weight: 500;
+  display: block;
+  width: 65% !important;
+  height: 35px !important;
+  margin: 20px auto 30px !important;
+  padding: 6px 9px !important;
+  transition: width 0.6s ease 0.2s !important;
+  text-align: center;
+}
+
+.input:focus,
+.input:active {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0px !important;
+  border-bottom: 2px solid #0f0f0f !important;
+  box-shadow: none !important;
+}
+
+.input:focus,
+.input:active {
+  width: 100% !important;
+}
+
+.input::placeholder {
+  color: #000 !important;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.button {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  width: fit-content;
+  padding: 25px !important;
+  border: 2px solid #0f0f0f;
+  border-radius: 0px !important;
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+}
+
+.button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.blwFtr {
+  padding: 20px 0px;
+}
+
+.social {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+}
+
+.social a {
+  color: #000;
+}
