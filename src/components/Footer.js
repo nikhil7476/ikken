@@ -23,7 +23,14 @@ const Footer = () => {
         <section className={styles.ftrMain}>
           <Container>
             <Row className="justify-content-center">
-              <Col lg={7} md={7} sm={10} className={styles.subscribeContainer}>
+              <Col
+                lg={7}
+                md={7}
+                sm={10}
+                className={styles.subscribeContainer}
+                data-aos="fade-up"
+                data-aos-duration="1500"
+              >
                 <h3 className={styles.heading}>
                   Subscribe to see what we're thinking
                 </h3>

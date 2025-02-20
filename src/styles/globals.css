@@ -1,13 +1,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --text-dark: #000000;
+  --text-light: #ffffff:
 }
 
 html,
@@ -19,9 +14,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-josefin-sans);
 }
 
 * {
@@ -31,12 +24,51 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: var(--text-dark) !important;
+  text-decoration: none !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-josefin-sans);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -.018em;
+  word-spacing: -.05em;
 }
+
+.global-authors {
+  font-size: 16px;
+  font-weight: 600;
+  width: 80%;
+  padding: 2px 20% 10px 0;
+}
+
+.global-title {
+  line-height: 1.1;
+  margin: 15px 0 5px -3px;
+}
+
+.global-underline {
+  transition: background-size 0.6s ease-out;
+  background: linear-gradient(#ff6dc4, #ff6dc4) no-repeat left 87% / 0 30%;
+}
+
+.global-underline:hover {
+  background-size: 100% 30%;
+}
+
+.global-excerpt {
+  font-size: 16px;
+  width: 90%;
+  padding: 20px 10% 15px 0;
+}
+
+.global-tags {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  width: 100%;
+  padding: 20px 0 0;
+}
+

@@ -1,8 +1,13 @@
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 import { Container, Row, Col } from "react-bootstrap";
+import { blogPosts } from "@/utils/blogData";
 
 export default function Home() {
+  const latestPost = blogPosts[0];
+
   return (
     <>
       <Head>
@@ -12,11 +17,39 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.main}>
-        <section>
+        <section className={styles.banner}>
           <Container>
             <Row>
-              <Col>
-                <h1>Home</h1>
+              <Col
+                xl={7}
+                lg={7}
+                md={6}
+                sm={12}
+                xs={12}
+                className="align-content-center"
+              >
+                <span className={`global-authors ${styles.auth}`}>
+                  By {latestPost.author}
+                </span>
+                <h1 className="global-title">
+                  <Link
+                    href={`/blog/${encodeURIComponent(latestPost.slug)}`}
+                    className="global-underline"
+                  >
+                    {latestPost.title}
+                  </Link>
+                </h1>
+                <p className="global-excerpt">{latestPost.excerpt}</p>
+                <span className="global-tags">{latestPost.tag}</span>
+              </Col>
+              <Col xl={5} lg={5} md={6} sm={12} xs={12}>
+                <Image
+                  src={latestPost.image}
+                  alt={latestPost.title}
+                  width={latestPost.imageWidth}
+                  height={latestPost.imageHeight}
+                  style={{ width: "100%", height: "auto" }}
+                />
               </Col>
             </Row>
           </Container>
