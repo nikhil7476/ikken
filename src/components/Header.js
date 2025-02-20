@@ -1,48 +1,54 @@
 import Image from "next/image";
-import React, { useState } from "react";
-import { Navbar, Nav, Offcanvas, Container, Button } from "react-bootstrap";
-import { FiMenu } from "react-icons/fi";
+import Link from "next/link";
+import React from "react";
+import { Nav, Container, Row, Col } from "react-bootstrap";
+import styles from "@/styles/Header.module.css";
 
 const Header = () => {
-  const [show, setShow] = useState(false);
-
   return (
     <>
-      <Navbar expand={false}>
-        <Container>
-          <Navbar.Brand href="/">
-            <Image
-              src="/ikken-logo.webp"
-              alt="Ikken-Logo"
-              title="Ikken_Logo"
-              width={975}
-              height={334}
-              style={{ width: "25%", height: "auto" }}
-            />
-          </Navbar.Brand>
-          <Button variant="outline-dark" onClick={() => setShow(true)}>
-            <FiMenu size={20} />
-          </Button>
+      <div className={styles.hdr}>
+        <Container className="pt-4 pb-4">
+          <Row>
+            <Col xl={6} lg={6} md={6} sm={6} xs={6}>
+              <Link href="/" title="Ikken" className="global-underline">
+                <Image
+                  src="/ikken-logo.webp"
+                  alt="Ikken-Logo"
+                  title="Ikken"
+                  width={975}
+                  height={334}
+                  style={{ width: "25%", height: "auto" }}
+                />
+              </Link>
+            </Col>
+            <Col xl={6} lg={6} md={6} sm={6} xs={6}>
+              <Nav className="justify-content-end" activeKey="/home">
+                <Nav.Item>
+                  <Nav.Link href="/" title="Home">
+                    Home
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="/about" title="About">
+                    About
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="/blog" title="Blog">
+                    Blog
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="/contact" title="Contact">
+                    Contact
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Col>
+          </Row>
         </Container>
-      </Navbar>
-      <Offcanvas
-        show={show}
-        onHide={() => setShow(false)}
-        placement="end"
-        backdrop
-      >
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Menu</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          <Nav className="flex-column">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
-            <Nav.Link href="#services">Services</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
-          </Nav>
-        </Offcanvas.Body>
-      </Offcanvas>
+      </div>
     </>
   );
 };

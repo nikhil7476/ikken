@@ -48,7 +48,10 @@ export default function Home() {
                   alt={latestPost.title}
                   width={latestPost.imageWidth}
                   height={latestPost.imageHeight}
-                  style={{ width: "100%", height: "auto" }}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                  }}
                 />
               </Col>
             </Row>
