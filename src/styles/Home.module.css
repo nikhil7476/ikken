@@ -13,3 +13,19 @@
 .banner a h1:hover {
   background-size: 97% 30%;
 }
+
+.blgCont {
+  margin-top: -5%;
+  position: relative;
+  z-index: 1;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.otherPostRow {
+  background-color: #F9F9F9;
+}
+
+.otherPostRow:nth-child(even) {
+  flex-direction: row-reverse;
+}

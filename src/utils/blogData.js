@@ -2,7 +2,7 @@ export const blogPosts = [
   {
     id: 1,
     author: "Nikhil Mishra",
-    tag: "Technology",
+    tag: ["Technology", "Career"],
     title: "Arriving to a New Milestone in My Career",
     slug: "arriving-to-a-new-milestone-in-my-career",
     date: "April 8, 2024",
@@ -21,7 +21,7 @@ export const blogPosts = [
     id: 2,
     author: "Nikhil Mishra",
     tag: "Innovation",
-    title: "The 99% That Remains in the Drawer",
+    title: "Look at life with the eyes of a child",
     slug: "the-99-percent-that-remains-in-the-drawer",
     date: "March 5, 2024",
     excerpt:
@@ -31,13 +31,15 @@ export const blogPosts = [
         never make it to the market. Today, I reflect on this “99%,” as I call it – the hidden innovations. While they might never see the light of day, they are critical for pushing the boundaries 
         of creativity and inspiring future projects. Acknowledging the “99%” helps us appreciate the development process, filled with untapped creativity.
       `,
-    image: "/blog2.jpg",
+    image: "/Look-at-life-with-the-eyes-of-a-child.jpg",
+    imageWidth:"768",  
+    imageHeight:"768",
   },
   {
     id: 3,
     author: "Nikhil Mishra",
-    tag: "AI",
-    title: "The Ethical Dilemmas of Artificial Intelligence",
+    tag: "Artificial Intelligence",
+    title: "Fashion is a mirror, reflecting the culture",
     slug: "ethical-dilemmas-of-artificial-intelligence",
     date: "February 15, 2024",
     excerpt:
@@ -47,13 +49,15 @@ export const blogPosts = [
         Should AI be allowed in areas requiring deep empathy, like counseling or healthcare? How do we ensure algorithms don’t perpetuate existing biases? These are tough questions for today’s tech 
         community. While AI offers great potential, it's essential we handle it responsibly to avoid long-term societal issues. Navigating this ethical terrain is as challenging as developing AI itself.
       `,
-    image: "/blog3.jpg",
+    image: "/Fashion-is-a-mirror-reflecting-the-culture.jpg",
+    imageWidth:"768",  
+    imageHeight:"1151",
   },
   {
     id: 4,
     author: "Nikhil Mishra",
     tag: "Programming",
-    title: "The Rise of Functional Programming",
+    title: "Everything has beauty, but not everyone sees it",
     slug: "the-rise-of-functional-programming",
     date: "January 20, 2024",
     excerpt:
@@ -63,13 +67,15 @@ export const blogPosts = [
         is ideal for handling complex applications. Languages like JavaScript and Python are incorporating more functional aspects, with JavaScript’s map, reduce, and filter methods being a few examples. 
         As applications become more data-intensive, the predictability and scalability of functional programming make it a strong choice for modern development.
       `,
-    image: "/blog4.jpg",
+    image: "/Everything-has-beauty-but-not-everyone-sees-it.jpg",
+    imageWidth:"768",  
+    imageHeight:"1152",
   },
   {
     id: 5,
     author: "Nikhil Mishra",
     tag: "Web Development",
-    title: "Exploring the Future of Web 3.0",
+    title: "You've gotta be natural",
     slug: "exploring-the-future-of-web-3",
     date: "December 10, 2023",
     excerpt:
@@ -79,13 +85,15 @@ export const blogPosts = [
         emphasizes user autonomy and data ownership. With decentralized applications (dApps) and blockchain at its core, users can control their data and interact with online services without intermediaries. 
         While still emerging, Web 3.0 holds great promise for transforming industries such as finance, healthcare, and content creation.
       `,
-    image: "/blog5.jpg",
+    image: "/You-have-gotta-be-natural.jpg",
+    imageWidth:"768",  
+    imageHeight:"1152",
   },
   {
     id: 6,
     author: "Nikhil Mishra",
     tag: "Cybersecurity",
-    title: "Understanding Zero Trust Architecture",
+    title: "I always loved aesthetics",
     slug: "understanding-zero-trust-architecture",
     date: "November 18, 2023",
     excerpt:
@@ -95,6 +103,8 @@ export const blogPosts = [
         whether inside or outside the network, is trusted by default. Every request is verified, minimizing vulnerabilities from compromised accounts. This model is increasingly popular for remote work 
         and cloud-based environments. Zero Trust emphasizes identity verification, secure access, and minimizing access privileges, making it a powerful strategy for modern cybersecurity.
       `,
-    image: "/blog6.jpg",
+    image: "/I-always-loved-aesthetics.jpg",
+    imageWidth:"768",  
+    imageHeight:"1024",
   },
 ];

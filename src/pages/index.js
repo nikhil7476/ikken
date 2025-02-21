@@ -7,6 +7,7 @@ import { blogPosts } from "@/utils/blogData";
 
 export default function Home() {
   const latestPost = blogPosts[0];
+  const otherPosts = blogPosts.slice(1, 5);
 
   return (
     <>
@@ -21,12 +22,14 @@ export default function Home() {
           <Container>
             <Row>
               <Col
-                xl={7}
-                lg={7}
+                xl={6}
+                lg={6}
                 md={6}
                 sm={12}
                 xs={12}
-                className="align-content-center"
+                className="align-content-center p-4 m-0"
+                data-aos="fade-right"
+                data-aos-duration="1500"
               >
                 <span className={`global-authors ${styles.auth}`}>
                   By {latestPost.author}
@@ -40,21 +43,89 @@ export default function Home() {
                   </Link>
                 </h1>
                 <p className="global-excerpt">{latestPost.excerpt}</p>
-                <span className="global-tags">{latestPost.tag}</span>
+                <span className="global-tags">
+                  {latestPost.tag.join(" | ")}
+                </span>
               </Col>
-              <Col xl={5} lg={5} md={6} sm={12} xs={12}>
-                <Image
-                  src={latestPost.image}
-                  alt={latestPost.title}
-                  width={latestPost.imageWidth}
-                  height={latestPost.imageHeight}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                  }}
-                />
+              <Col
+                xl={6}
+                lg={6}
+                md={6}
+                sm={12}
+                xs={12}
+                className="p-0 m-0"
+                data-aos="fade-left"
+                data-aos-duration="1500"
+              >
+                <Link
+                  href={`/blog/${encodeURIComponent(latestPost.slug)}`}
+                  title={latestPost.title}
+                >
+                  <Image
+                    src={latestPost.image}
+                    alt={latestPost.title}
+                    width={latestPost.imageWidth}
+                    height={latestPost.imageHeight}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                  />
+                </Link>
               </Col>
             </Row>
+          </Container>
+        </section>
+        <section>
+          <Container className={styles.blgCont}>
+            {otherPosts.map((post) => (
+              <Row
+                key={post.id}
+                className={styles.otherPostRow}
+                data-aos="fade-up"
+                data-aos-duration="1500"
+              >
+                <Col xl={6} lg={6} md={6} sm={12} xs={12} className="p-0 m-0">
+                  <Link
+                    href={`/blog/${encodeURIComponent(post.slug)}`}
+                    title={post.title}
+                  >
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={post.imageWidth}
+                      height={post.imageHeight}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                      }}
+                    />
+                  </Link>
+                </Col>
+                <Col
+                  xl={6}
+                  lg={6}
+                  md={6}
+                  sm={12}
+                  xs={12}
+                  className="align-content-center p-4 m-0"
+                >
+                  <span className={`global-authors ${styles.auth}`}>
+                    By {post.author}
+                  </span>
+                  <h1 className="global-title">
+                    <Link
+                      href={`/blog/${encodeURIComponent(post.slug)}`}
+                      className="global-underline"
+                    >
+                      {post.title}
+                    </Link>
+                  </h1>
+                  <p className="global-excerpt">{post.excerpt}</p>
+                  <span className="global-tags">{post.tag}</span>
+                </Col>
+              </Row>
+            ))}
           </Container>
         </section>
       </div>
