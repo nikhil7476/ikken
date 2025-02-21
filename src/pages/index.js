@@ -8,6 +8,7 @@ import { blogPosts } from "@/utils/blogData";
 export default function Home() {
   const latestPost = blogPosts[0];
   const otherPosts = blogPosts.slice(1, 5);
+  const middlePosts = blogPosts[6];
 
   return (
     <>
@@ -31,9 +32,7 @@ export default function Home() {
                 data-aos="fade-right"
                 data-aos-duration="1500"
               >
-                <span className={`global-authors ${styles.auth}`}>
-                  By {latestPost.author}
-                </span>
+                <span className="global-authors">By {latestPost.author}</span>
                 <h1 className="global-title">
                   <Link
                     href={`/blog/${encodeURIComponent(latestPost.slug)}`}
@@ -110,9 +109,7 @@ export default function Home() {
                   xs={12}
                   className="align-content-center p-4 m-0"
                 >
-                  <span className={`global-authors ${styles.auth}`}>
-                    By {post.author}
-                  </span>
+                  <span className="global-authors">By {post.author}</span>
                   <h1 className="global-title">
                     <Link
                       href={`/blog/${encodeURIComponent(post.slug)}`}
@@ -126,6 +123,42 @@ export default function Home() {
                 </Col>
               </Row>
             ))}
+          </Container>
+          <Container>
+            <Row data-aos="fade-up" data-aos-duration="1500">
+              <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+                <div
+                  style={{
+                    backgroundImage: `url(${middlePosts.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center center",
+                    minHeight: "250px",
+                  }}
+                >
+                  <h2 style={{ display: "none" }}>Middle Post</h2>
+                </div>
+              </Col>
+              <Col
+                xl={12}
+                lg={12}
+                md={12}
+                sm={12}
+                xs={12}
+                className="align-content-center p-4 m-0 text-center"
+              >
+                <span className="global-authors">By {middlePosts.author}</span>
+                <h1 className="global-title">
+                  <Link
+                    href={`/blog/${encodeURIComponent(middlePosts.slug)}`}
+                    className="global-underline"
+                  >
+                    {middlePosts.title}
+                  </Link>
+                </h1>
+                <p className="global-excerpt">{middlePosts.excerpt}</p>
+                <span className="global-tags">{middlePosts.tag}</span>
+              </Col>
+            </Row>
           </Container>
         </section>
       </div>

@@ -107,4 +107,22 @@ export const blogPosts = [
     imageWidth:"768",  
     imageHeight:"1024",
   },
+  {
+    id: 7,
+    author: "Nikhil Mishra",
+    tag: "Cybersecurity",
+    title: "Being unique is better than being perfect",
+    slug: "understanding-zero-trust-architecture",
+    date: "November 18, 2023",
+    excerpt:
+      "Zero Trust is transforming cybersecurity in a world with increasing threats.",
+    content: `
+        In a world where cyber threats are constantly evolving, traditional perimeter-based security models fall short. Zero Trust Architecture (ZTA) is a cybersecurity approach where no entity, 
+        whether inside or outside the network, is trusted by default. Every request is verified, minimizing vulnerabilities from compromised accounts. This model is increasingly popular for remote work 
+        and cloud-based environments. Zero Trust emphasizes identity verification, secure access, and minimizing access privileges, making it a powerful strategy for modern cybersecurity.
+      `,
+    image: "/blog-middle.jpg",
+    imageWidth:"1080",  
+    imageHeight:"720",
+  },
 ];
