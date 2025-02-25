@@ -113,8 +113,8 @@ export default function BlogPost() {
                     xl={4}
                     lg={4}
                     md={4}
-                    sm={12}
-                    xs={12}
+                    sm={4}
+                    xs={4}
                     className="align-content-center"
                   >
                     {nextPost && (
@@ -134,8 +134,8 @@ export default function BlogPost() {
                     xl={7}
                     lg={7}
                     md={7}
-                    sm={12}
-                    xs={12}
+                    sm={7}
+                    xs={7}
                     className="align-content-center p-2"
                   >
                     <span>Newer Story</span>
@@ -163,8 +163,8 @@ export default function BlogPost() {
                     xl={7}
                     lg={7}
                     md={7}
-                    sm={12}
-                    xs={12}
+                    sm={7}
+                    xs={7}
                     className="align-content-center p-2"
                   >
                     <span>Older Story</span>
@@ -185,8 +185,8 @@ export default function BlogPost() {
                     xl={4}
                     lg={4}
                     md={4}
-                    sm={12}
-                    xs={12}
+                    sm={4}
+                    xs={4}
                     className="align-content-center"
                   >
                     {prevPost && (

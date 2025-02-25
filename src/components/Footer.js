@@ -27,6 +27,7 @@ const Footer = () => {
                 lg={7}
                 md={7}
                 sm={10}
+                xs={11}
                 className={styles.subscribeContainer}
                 data-aos="fade-up"
                 data-aos-duration="1500"
