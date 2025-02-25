@@ -139,12 +139,18 @@ export default function BlogPost() {
                     className="align-content-center p-2"
                   >
                     <span>Newer Story</span>
-                    <Link
-                      href={nextPost ? `/blog/${encodeURIComponent(nextPost.slug)}` : '#'}
-                      className="global-title"
-                    >
-                      <h2 className="global-underline">{nextPost ? nextPost.title : 'No Newer Story'}</h2>
-                    </Link>
+                    <h2 className="global-title">
+                      <Link
+                        href={
+                          nextPost
+                            ? `/blog/${encodeURIComponent(nextPost.slug)}`
+                            : "#"
+                        }
+                        className="global-underline"
+                      >
+                        {nextPost ? nextPost.title : "No Newer Story"}
+                      </Link>
+                    </h2>
                   </Col>
                 </Row>
               </Col>
@@ -162,12 +168,18 @@ export default function BlogPost() {
                     className="align-content-center p-2"
                   >
                     <span>Older Story</span>
-                    <Link
-                      href={prevPost ? `/blog/${encodeURIComponent(prevPost.slug)}` : '#'}
-                      className="global-title"
-                    >
-                      <h2 className="global-underline">{prevPost ? prevPost.title : 'No Older Story'}</h2>
-                    </Link>
+                    <h2 className="global-title">
+                      <Link
+                        href={
+                          prevPost
+                            ? `/blog/${encodeURIComponent(prevPost.slug)}`
+                            : "#"
+                        }
+                        className="global-underline"
+                      >
+                        {prevPost ? prevPost.title : "No Older Story"}
+                      </Link>
+                    </h2>
                   </Col>
                   <Col
                     xl={4}

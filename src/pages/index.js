@@ -111,14 +111,14 @@ export default function Home() {
                   className="align-content-center p-4 m-0"
                 >
                   <span className="global-authors">By {post.author}</span>
-                  <h1 className="global-title">
+                  <h2 className="global-title">
                     <Link
                       href={`/blog/${encodeURIComponent(post.slug)}`}
                       className="global-underline"
                     >
                       {post.title}
                     </Link>
-                  </h1>
+                  </h2>
                   <p className="global-excerpt">{post.excerpt}</p>
                   <span className="global-tags">{post.tag}</span>
                 </Col>
@@ -152,14 +152,14 @@ export default function Home() {
                 className="align-content-center p-4 m-0 text-center"
               >
                 <span className="global-authors">By {middlePosts.author}</span>
-                <h1 className="global-title">
+                <h2 className="global-title">
                   <Link
                     href={`/blog/${encodeURIComponent(middlePosts.slug)}`}
                     className="global-underline"
                   >
                     {middlePosts.title}
                   </Link>
-                </h1>
+                </h2>
                 <p className="global-excerpt">{middlePosts.excerpt}</p>
                 <span className="global-tags">{middlePosts.tag}</span>
               </Col>
@@ -199,14 +199,14 @@ export default function Home() {
                   className="align-content-center p-4 m-0"
                 >
                   <span className="global-authors">By {post.author}</span>
-                  <h1 className="global-title">
+                  <h2 className="global-title">
                     <Link
                       href={`/blog/${encodeURIComponent(post.slug)}`}
                       className="global-underline"
                     >
                       {post.title}
                     </Link>
-                  </h1>
+                  </h2>
                   <p className="global-excerpt">{post.excerpt}</p>
                   <span className="global-tags">{post.tag}</span>
                 </Col>
