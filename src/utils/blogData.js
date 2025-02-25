@@ -6,6 +6,8 @@ export const blogPosts = [
     title: "Arriving to a New Milestone in My Career",
     slug: "arriving-to-a-new-milestone-in-my-career",
     date: "April 8, 2024",
+    quote:
+      "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
     excerpt:
       "Reflecting on the challenges and successes that have brought me to a new level in my tech career.",
     content: `
@@ -14,8 +16,8 @@ export const blogPosts = [
         Moving forward, I’m eager to keep pushing boundaries and take on more complex projects that merge creativity and functionality. This milestone isn’t the end; it’s just the beginning of new possibilities.
       `,
     image: "/banner-blog.jpeg",
-    imageWidth:"333",  
-    imageHeight:"500",
+    imageWidth: "333",
+    imageHeight: "500",
   },
   {
     id: 2,
@@ -24,6 +26,8 @@ export const blogPosts = [
     title: "Look at life with the eyes of a child",
     slug: "the-99-percent-that-remains-in-the-drawer",
     date: "March 5, 2024",
+    quote:
+      "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
     excerpt:
       "Exploring the innovations that never reach the market but hold immense potential.",
     content: `
@@ -32,8 +36,8 @@ export const blogPosts = [
         of creativity and inspiring future projects. Acknowledging the “99%” helps us appreciate the development process, filled with untapped creativity.
       `,
     image: "/Look-at-life-with-the-eyes-of-a-child.jpg",
-    imageWidth:"768",  
-    imageHeight:"768",
+    imageWidth: "768",
+    imageHeight: "768",
   },
   {
     id: 3,
@@ -42,6 +46,8 @@ export const blogPosts = [
     title: "Fashion is a mirror, reflecting the culture",
     slug: "ethical-dilemmas-of-artificial-intelligence",
     date: "February 15, 2024",
+    quote:
+      "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
     excerpt:
       "Discussing the ethical questions that accompany the rise of artificial intelligence.",
     content: `
@@ -50,8 +56,8 @@ export const blogPosts = [
         community. While AI offers great potential, it's essential we handle it responsibly to avoid long-term societal issues. Navigating this ethical terrain is as challenging as developing AI itself.
       `,
     image: "/Fashion-is-a-mirror-reflecting-the-culture.jpg",
-    imageWidth:"768",  
-    imageHeight:"1151",
+    imageWidth: "768",
+    imageHeight: "1151",
   },
   {
     id: 4,
@@ -60,6 +66,8 @@ export const blogPosts = [
     title: "Everything has beauty, but not everyone sees it",
     slug: "the-rise-of-functional-programming",
     date: "January 20, 2024",
+    quote:
+      "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
     excerpt:
       "Functional programming has seen a resurgence in recent years. Let's dive into why it's gaining popularity.",
     content: `
@@ -68,8 +76,8 @@ export const blogPosts = [
         As applications become more data-intensive, the predictability and scalability of functional programming make it a strong choice for modern development.
       `,
     image: "/Everything-has-beauty-but-not-everyone-sees-it.jpg",
-    imageWidth:"768",  
-    imageHeight:"1152",
+    imageWidth: "768",
+    imageHeight: "1152",
   },
   {
     id: 5,
@@ -78,6 +86,8 @@ export const blogPosts = [
     title: "You've gotta be natural",
     slug: "exploring-the-future-of-web-3",
     date: "December 10, 2023",
+    quote:
+      "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
     excerpt:
       "Web 3.0 promises to revolutionize the internet as we know it. But what exactly does that mean?",
     content: `
@@ -86,8 +96,8 @@ export const blogPosts = [
         While still emerging, Web 3.0 holds great promise for transforming industries such as finance, healthcare, and content creation.
       `,
     image: "/You-have-gotta-be-natural.jpg",
-    imageWidth:"768",  
-    imageHeight:"1152",
+    imageWidth: "768",
+    imageHeight: "1152",
   },
   {
     id: 6,
@@ -96,6 +106,8 @@ export const blogPosts = [
     title: "Being unique is better than being perfect",
     slug: "understanding-zero-trust-architecture",
     date: "November 18, 2023",
+    quote:
+      "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
     excerpt:
       "Zero Trust is transforming cybersecurity in a world with increasing threats.",
     content: `
@@ -104,8 +116,8 @@ export const blogPosts = [
         and cloud-based environments. Zero Trust emphasizes identity verification, secure access, and minimizing access privileges, making it a powerful strategy for modern cybersecurity.
       `,
     image: "/blog-middle.jpg",
-    imageWidth:"1080",  
-    imageHeight:"720",
+    imageWidth: "1080",
+    imageHeight: "720",
   },
   {
     id: 7,
@@ -114,6 +126,8 @@ export const blogPosts = [
     title: "I always loved aesthetics",
     slug: "understanding-zero-trust-architecture",
     date: "November 18, 2023",
+    quote:
+      "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
     excerpt:
       "Zero Trust is transforming cybersecurity in a world with increasing threats.",
     content: `
@@ -122,8 +136,8 @@ export const blogPosts = [
         and cloud-based environments. Zero Trust emphasizes identity verification, secure access, and minimizing access privileges, making it a powerful strategy for modern cybersecurity.
       `,
     image: "/I-always-loved-aesthetics.jpg",
-    imageWidth:"768",  
-    imageHeight:"1024",
+    imageWidth: "768",
+    imageHeight: "1024",
   },
   {
     id: 8,
@@ -132,6 +146,8 @@ export const blogPosts = [
     title: "When you are on your way to home",
     slug: "understanding-zero-trust-architecture",
     date: "November 18, 2023",
+    quote:
+      "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
     excerpt:
       "Zero Trust is transforming cybersecurity in a world with increasing threats.",
     content: `
@@ -140,7 +156,7 @@ export const blogPosts = [
         and cloud-based environments. Zero Trust emphasizes identity verification, secure access, and minimizing access privileges, making it a powerful strategy for modern cybersecurity.
       `,
     image: "/When-you-are-on-your-way-to-home.jpg",
-    imageWidth:"768",  
-    imageHeight:"1152",
+    imageWidth: "768",
+    imageHeight: "1152",
   },
 ];
