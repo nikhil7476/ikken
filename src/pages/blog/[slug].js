@@ -117,16 +117,18 @@ export default function BlogPost() {
                     xs={12}
                     className="align-content-center"
                   >
-                    <Image
-                      src={nextPost.image}
-                      alt={nextPost.title}
-                      width={nextPost.imageWidth}
-                      height={nextPost.imageHeight}
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                      }}
-                    />
+                    {nextPost && (
+                      <Image
+                        src={nextPost.image}
+                        alt={nextPost.title}
+                        width={nextPost.imageWidth}
+                        height={nextPost.imageHeight}
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                        }}
+                      />
+                    )}
                   </Col>
                   <Col
                     xl={7}
@@ -138,16 +140,10 @@ export default function BlogPost() {
                   >
                     <span>Newer Story</span>
                     <Link
-                      href={
-                        nextPost
-                          ? `/blog/${encodeURIComponent(nextPost.slug)}`
-                          : "#"
-                      }
+                      href={nextPost ? `/blog/${encodeURIComponent(nextPost.slug)}` : '#'}
                       className="global-title"
                     >
-                      <h2 className="global-underline">
-                        {nextPost ? nextPost.title : "No Newer Story"}
-                      </h2>
+                      <h2 className="global-underline">{nextPost ? nextPost.title : 'No Newer Story'}</h2>
                     </Link>
                   </Col>
                 </Row>
@@ -167,16 +163,10 @@ export default function BlogPost() {
                   >
                     <span>Older Story</span>
                     <Link
-                      href={
-                        prevPost
-                          ? `/blog/${encodeURIComponent(prevPost.slug)}`
-                          : "#"
-                      }
+                      href={prevPost ? `/blog/${encodeURIComponent(prevPost.slug)}` : '#'}
                       className="global-title"
                     >
-                      <h2 className="global-underline">
-                        {prevPost ? prevPost.title : "No Older Story"}
-                      </h2>
+                      <h2 className="global-underline">{prevPost ? prevPost.title : 'No Older Story'}</h2>
                     </Link>
                   </Col>
                   <Col
@@ -187,16 +177,18 @@ export default function BlogPost() {
                     xs={12}
                     className="align-content-center"
                   >
-                    <Image
-                      src={prevPost.image}
-                      alt={prevPost.title}
-                      width={prevPost.imageWidth}
-                      height={prevPost.imageHeight}
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                      }}
-                    />
+                    {prevPost && (
+                      <Image
+                        src={prevPost.image}
+                        alt={prevPost.title}
+                        width={prevPost.imageWidth}
+                        height={prevPost.imageHeight}
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                        }}
+                      />
+                    )}
                   </Col>
                 </Row>
               </Col>
