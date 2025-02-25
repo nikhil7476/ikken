@@ -27,7 +27,7 @@ const BlogPage = () => {
             <h2 className={styles.postTitle}>{latestPost.title}</h2>
           </Link>
           <span className={styles.date}>{latestPost.date}</span>
-          <p className={styles.tag}>{latestPost.tag}</p>
+          <p className={styles.tag}>{latestPost.tag.join(" | ")}</p>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ const BlogPage = () => {
               <h3 className={styles.postTitle}>{post.title}</h3>
             </Link>
             <span className={styles.date}>{post.date}</span>
-            <p className={styles.tag}>{post.tag}</p>
+            <p className={styles.tag}>{post.tag.join(" | ")}</p>
           </div>
         ))}
       </div>

@@ -41,7 +41,7 @@ export default function BlogPost() {
                 md={4}
                 sm={12}
                 xs={12}
-                className="p-0 m-0"
+                className="p-0 m-0 align-content-center"
                 data-aos="fade-left"
                 data-aos-duration="1500"
               >
@@ -103,7 +103,14 @@ export default function BlogPost() {
             <Row data-aos="fade-up" data-aos-duration="1500">
               <Col xl={6} lg={6} md={6} sm={12} xs={12}>
                 <Row style={{ backgroundColor: "#F9F9F9" }}>
-                  <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+                  <Col
+                    xl={4}
+                    lg={4}
+                    md={4}
+                    sm={12}
+                    xs={12}
+                    className="align-content-center"
+                  >
                     <Image
                       src={post.image}
                       alt={post.title}
@@ -121,7 +128,7 @@ export default function BlogPost() {
                     md={8}
                     sm={12}
                     xs={12}
-                    className="align-content-center"
+                    className="align-content-center p-2"
                   >
                     <span>Newer Story</span>
                     <Link
@@ -141,7 +148,7 @@ export default function BlogPost() {
                     md={8}
                     sm={12}
                     xs={12}
-                    className="align-content-center"
+                    className="align-content-center p-2"
                   >
                     <span>Older Story</span>
                     <Link
@@ -151,7 +158,14 @@ export default function BlogPost() {
                       <h2 className="global-underline">{post.title}</h2>
                     </Link>
                   </Col>
-                  <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+                  <Col
+                    xl={4}
+                    lg={4}
+                    md={4}
+                    sm={12}
+                    xs={12}
+                    className="align-content-center"
+                  >
                     <Image
                       src={post.image}
                       alt={post.title}

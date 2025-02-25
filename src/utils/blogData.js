@@ -22,7 +22,7 @@ export const blogPosts = [
   {
     id: 2,
     author: "Nikhil Mishra",
-    tag: "Innovation",
+    tag: ["Technology", "Career"],
     title: "Look at life with the eyes of a child",
     slug: "the-99-percent-that-remains-in-the-drawer",
     date: "March 5, 2024",
@@ -42,7 +42,7 @@ export const blogPosts = [
   {
     id: 3,
     author: "Nikhil Mishra",
-    tag: "Artificial Intelligence",
+    tag: ["Technology", "Career"],
     title: "Fashion is a mirror, reflecting the culture",
     slug: "ethical-dilemmas-of-artificial-intelligence",
     date: "February 15, 2024",
@@ -62,7 +62,7 @@ export const blogPosts = [
   {
     id: 4,
     author: "Nikhil Mishra",
-    tag: "Programming",
+    tag: ["Technology", "Career"],
     title: "Everything has beauty, but not everyone sees it",
     slug: "the-rise-of-functional-programming",
     date: "January 20, 2024",
@@ -82,7 +82,7 @@ export const blogPosts = [
   {
     id: 5,
     author: "Nikhil Mishra",
-    tag: "Web Development",
+    tag: ["Technology", "Career"],
     title: "You've gotta be natural",
     slug: "exploring-the-future-of-web-3",
     date: "December 10, 2023",
@@ -102,7 +102,7 @@ export const blogPosts = [
   {
     id: 6,
     author: "Nikhil Mishra",
-    tag: "Cybersecurity",
+    tag: ["Technology", "Career"],
     title: "Being unique is better than being perfect",
     slug: "understanding-zero-trust-architecture",
     date: "November 18, 2023",
@@ -122,7 +122,7 @@ export const blogPosts = [
   {
     id: 7,
     author: "Nikhil Mishra",
-    tag: "Cybersecurity",
+    tag: ["Technology", "Career"],
     title: "I always loved aesthetics",
     slug: "understanding-zero-trust-architecture",
     date: "November 18, 2023",
@@ -142,7 +142,7 @@ export const blogPosts = [
   {
     id: 8,
     author: "Nikhil Mishra",
-    tag: "Cybersecurity",
+    tag: ["Technology", "Career"],
     title: "When you are on your way to home",
     slug: "understanding-zero-trust-architecture",
     date: "November 18, 2023",
