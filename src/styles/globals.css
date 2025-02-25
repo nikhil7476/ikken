@@ -77,8 +77,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
   position: fixed;
   z-index: 2;
-  top: 55px;
-  left: 33px;
+  top: 25%;
+  left: 30px;
   max-width: 400px;
   height: 100px;
   cursor: default;
@@ -88,6 +88,30 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 2.5px;
   text-transform: uppercase;
 }
+
+
+.footer-description {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  right: -100px;
+  max-width: fit-content;
+  cursor: default;
+  transform-origin: 0 0;
+  text-align: right;
+  letter-spacing: 2.5px;
+  text-transform: capitalize;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transform: rotate(90deg) translate(-100%, 0);
+  padding: 0;
+}
+
 
 /*Header CSS*/
 
@@ -109,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
     background-size: 20% 10% !important;
   }
 
-  .header-description {
+  .header-description, .footer-description {
     display: none;
   }
 }

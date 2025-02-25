@@ -59,36 +59,12 @@ const Footer = () => {
         </section>
         <section className={styles.blwFtr}>
           <Container>
-            <Row>
+            <Row className="justify-content-center">
               <Col lg={6} md={6} sm={12} className="align-content-center">
-                <p className="mb-0">
+                <p className="mb-0 text-center">
                   Ikken &copy; {new Date().getFullYear()}. All Right Reserved.
                   Published with Ghost & Ikken.
                 </p>
-              </Col>
-              <Col lg={6} md={6} sm={12} className="align-content-center">
-                <ul className={styles.social}>
-                  <li>
-                    <Link href="#" title="Facebook">
-                      <FiFacebook />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" title="Instagram">
-                      <BsInstagram />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" title="Twitter">
-                      <FaXTwitter />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" title="LinkedIn">
-                      <FaLinkedinIn />
-                    </Link>
-                  </li>
-                </ul>
               </Col>
             </Row>
           </Container>

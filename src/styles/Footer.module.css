@@ -91,15 +91,3 @@
 .blwFtr {
   padding: 20px 0px;
 }
-
-.social {
-  display: flex;
-  justify-content: flex-end;
-  list-style: none;
-  gap: 10px;
-  margin: 0;
-}
-
-.social a {
-  color: #000;
-}
