@@ -15,7 +15,7 @@ export const blogPosts = [
         From my first coding experience to mastering frameworks and languages, every step has been rewarding. Each project has taught me something valuable, shaping me into the developer I am today. 
         Moving forward, I’m eager to keep pushing boundaries and take on more complex projects that merge creativity and functionality. This milestone isn’t the end; it’s just the beginning of new possibilities.
       `,
-    image: "/banner-blog.jpeg",
+    image: "/Arriving-to-a-new-milestone-in-my-career.jpeg",
     imageWidth: "333",
     imageHeight: "500",
   },
@@ -24,7 +24,7 @@ export const blogPosts = [
     author: "Nikhil Mishra",
     tag: ["Technology", "Career"],
     title: "Look at life with the eyes of a child",
-    slug: "the-99-percent-that-remains-in-the-drawer",
+    slug: "look-at-life-with-the-eyes-of-a-child",
     date: "March 5, 2024",
     quote:
       "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
@@ -44,7 +44,7 @@ export const blogPosts = [
     author: "Nikhil Mishra",
     tag: ["Technology", "Career"],
     title: "Fashion is a mirror, reflecting the culture",
-    slug: "ethical-dilemmas-of-artificial-intelligence",
+    slug: "fashion-is-a-mirror-reflecting-the-culture",
     date: "February 15, 2024",
     quote:
       "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
@@ -64,7 +64,7 @@ export const blogPosts = [
     author: "Nikhil Mishra",
     tag: ["Technology", "Career"],
     title: "Everything has beauty, but not everyone sees it",
-    slug: "the-rise-of-functional-programming",
+    slug: "everything-has-beauty-but-not-everyone-sees-it",
     date: "January 20, 2024",
     quote:
       "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
@@ -84,7 +84,7 @@ export const blogPosts = [
     author: "Nikhil Mishra",
     tag: ["Technology", "Career"],
     title: "You've gotta be natural",
-    slug: "exploring-the-future-of-web-3",
+    slug: "you-have-gotta-be-natural",
     date: "December 10, 2023",
     quote:
       "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
@@ -104,7 +104,7 @@ export const blogPosts = [
     author: "Nikhil Mishra",
     tag: ["Technology", "Career"],
     title: "Being unique is better than being perfect",
-    slug: "understanding-zero-trust-architecture",
+    slug: "being-unique-is-better-than-being-perfect",
     date: "November 18, 2023",
     quote:
       "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
@@ -124,7 +124,7 @@ export const blogPosts = [
     author: "Nikhil Mishra",
     tag: ["Technology", "Career"],
     title: "I always loved aesthetics",
-    slug: "understanding-zero-trust-architecture",
+    slug: "i-always-loved-aesthetics",
     date: "November 18, 2023",
     quote:
       "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
@@ -144,7 +144,7 @@ export const blogPosts = [
     author: "Nikhil Mishra",
     tag: ["Technology", "Career"],
     title: "When you are on your way to home",
-    slug: "understanding-zero-trust-architecture",
+    slug: "when-you-are-on-your-way-to-home",
     date: "November 18, 2023",
     quote:
       "Utinam quidem dicerent alium alio beatiorem. Iam ruinas videres. Non autem hoc, igitur. Universa enim illorum ratione cum tota vestra confligendum puto.",
