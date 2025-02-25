@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Container, Row, Col } from "react-bootstrap";
-import { blogPosts } from "@/utils/blogData"; // Assuming blogPosts are imported from a separate file
+import { blogPosts } from "@/utils/blogData";
 import styles from "@/styles/Blog.module.css";
 
 const BlogPage = () => {
@@ -10,11 +10,12 @@ const BlogPage = () => {
     <div className={styles.blgMain}>
       <section>
         <Container className="p-4">
-          <Row className="justify-content-center"> 
-            <Col xl={9} lg={9} md={9} sm={12} xs={12} className="text-center" >
+          <Row className="justify-content-center">
+            <Col xl={9} lg={9} md={9} sm={12} xs={12} className="text-center">
               <h1>
                 Ikken is a lightweight theme. Perfect for a fashion blog,
-                lifestyle blog, travel blog, food or photography blog. {"Ikken's"}
+                lifestyle blog, travel blog, food or photography blog.{" "}
+                {"Ikken's"}
                 clean style design is the ideal choice for the minimal loving
                 creative blogger.
               </h1>
