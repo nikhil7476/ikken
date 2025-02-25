@@ -9,6 +9,9 @@ export default function BlogPost() {
   const router = useRouter();
   const { slug } = router.query;
   const post = blogPosts.find((post) => post.slug === slug);
+  const currentIndex = blogPosts.findIndex((post) => post.slug === slug);
+  const nextPost = blogPosts[currentIndex + 1];
+  const prevPost = blogPosts[currentIndex - 1];
 
   if (!post) return <p>Loading...</p>;
 
@@ -102,7 +105,10 @@ export default function BlogPost() {
           <Container>
             <Row data-aos="fade-up" data-aos-duration="1500">
               <Col xl={6} lg={6} md={6} sm={12} xs={12}>
-                <Row style={{ backgroundColor: "#F9F9F9" }}>
+                <Row
+                  style={{ backgroundColor: "#F9F9F9" }}
+                  className="justify-content-start"
+                >
                   <Col
                     xl={4}
                     lg={4}
@@ -112,10 +118,10 @@ export default function BlogPost() {
                     className="align-content-center"
                   >
                     <Image
-                      src={post.image}
-                      alt={post.title}
-                      width={post.imageWidth}
-                      height={post.imageHeight}
+                      src={nextPost.image}
+                      alt={nextPost.title}
+                      width={nextPost.imageWidth}
+                      height={nextPost.imageHeight}
                       style={{
                         width: "100%",
                         height: "auto",
@@ -123,39 +129,54 @@ export default function BlogPost() {
                     />
                   </Col>
                   <Col
-                    xl={8}
-                    lg={8}
-                    md={8}
+                    xl={7}
+                    lg={7}
+                    md={7}
                     sm={12}
                     xs={12}
                     className="align-content-center p-2"
                   >
                     <span>Newer Story</span>
                     <Link
-                      href={`/blog/${encodeURIComponent(post.slug)}`}
+                      href={
+                        nextPost
+                          ? `/blog/${encodeURIComponent(nextPost.slug)}`
+                          : "#"
+                      }
                       className="global-title"
                     >
-                      <h2 className="global-underline">{post.title}</h2>
+                      <h2 className="global-underline">
+                        {nextPost ? nextPost.title : "No Newer Story"}
+                      </h2>
                     </Link>
                   </Col>
                 </Row>
               </Col>
               <Col xl={6} lg={6} md={6} sm={12} xs={12}>
-                <Row style={{ backgroundColor: "#F1F1F1", marginTop: "60px" }}>
+                <Row
+                  style={{ backgroundColor: "#F1F1F1", marginTop: "60px" }}
+                  className="justify-content-end"
+                >
                   <Col
-                    xl={8}
-                    lg={8}
-                    md={8}
+                    xl={7}
+                    lg={7}
+                    md={7}
                     sm={12}
                     xs={12}
                     className="align-content-center p-2"
                   >
                     <span>Older Story</span>
                     <Link
-                      href={`/blog/${encodeURIComponent(post.slug)}`}
+                      href={
+                        prevPost
+                          ? `/blog/${encodeURIComponent(prevPost.slug)}`
+                          : "#"
+                      }
                       className="global-title"
                     >
-                      <h2 className="global-underline">{post.title}</h2>
+                      <h2 className="global-underline">
+                        {prevPost ? prevPost.title : "No Older Story"}
+                      </h2>
                     </Link>
                   </Col>
                   <Col
@@ -167,10 +188,10 @@ export default function BlogPost() {
                     className="align-content-center"
                   >
                     <Image
-                      src={post.image}
-                      alt={post.title}
-                      width={post.imageWidth}
-                      height={post.imageHeight}
+                      src={prevPost.image}
+                      alt={prevPost.title}
+                      width={prevPost.imageWidth}
+                      height={prevPost.imageHeight}
                       style={{
                         width: "100%",
                         height: "auto",
