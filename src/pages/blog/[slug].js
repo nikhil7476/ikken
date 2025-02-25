@@ -10,8 +10,8 @@ export default function BlogPost() {
   const { slug } = router.query;
   const post = blogPosts.find((post) => post.slug === slug);
   const currentIndex = blogPosts.findIndex((post) => post.slug === slug);
-  const nextPost = blogPosts[currentIndex + 1];
-  const prevPost = blogPosts[currentIndex - 1];
+  const nextPost = blogPosts[currentIndex + 1] || null;
+  const prevPost = blogPosts[currentIndex - 1] || null;
 
   if (!post) return <p>Loading...</p>;
 
