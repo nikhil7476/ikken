@@ -19,7 +19,15 @@ export default function BlogPost() {
   return (
     <>
       <Head>
-        <title>{post.title}</title>
+        <title>{post?.title || "Blog"}</title>
+        <meta name="title" content={post?.title || "Nextupgrad"} />
+        <meta
+          name="description"
+          content={
+            post?.excerpt ||
+            "Dive into our blog for insights into Web and Software."
+          }
+        />
       </Head>
       <div className={styles.single}>
         <section className={styles.banner}>
