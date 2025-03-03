@@ -11,6 +11,10 @@ export default function Document() {
           crossOrigin="anonymous"
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="google-site-verification"
+          content="OTQkP2yGziyIKUbyBXzuvnBFePwI46ccKdyVM8Zj3Kc"
+        />
       </Head>
       <body>
         <Main />
