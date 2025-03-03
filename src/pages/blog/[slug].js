@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { blogPosts } from "@/utils/blogData";
 import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
@@ -9,10 +10,25 @@ import Head from "next/head";
 export default function BlogPost() {
   const router = useRouter();
   const { slug } = router.query;
-  const post = blogPosts.find((post) => post.slug === slug);
-  const currentIndex = blogPosts.findIndex((post) => post.slug === slug);
-  const nextPost = blogPosts[currentIndex + 1] || null;
-  const prevPost = blogPosts[currentIndex - 1] || null;
+
+  // State for handling post data
+  const [post, setPost] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
+  const [nextPost, setNextPost] = useState(null);
+  const [prevPost, setPrevPost] = useState(null);
+
+  useEffect(() => {
+    if (!router.isReady || !slug) return;
+
+    const foundPost = blogPosts.find((p) => p.slug === slug);
+    if (foundPost) {
+      const index = blogPosts.findIndex((p) => p.slug === slug);
+      setPost(foundPost);
+      setCurrentIndex(index);
+      setNextPost(blogPosts[index + 1] || null);
+      setPrevPost(blogPosts[index - 1] || null);
+    }
+  }, [router.isReady, slug]);
 
   if (!post) return <p>Loading...</p>;
 
@@ -43,12 +59,12 @@ export default function BlogPost() {
                 data-aos="fade-right"
                 data-aos-duration="1500"
               >
-                <span className="global-authors">By {post.author}</span>
+                <span className="global-authors">By {post?.author}</span>
                 <h1 className="global-title">
-                  <span className="global-underline">{post.title}</span>
+                  <span className="global-underline">{post?.title}</span>
                 </h1>
-                <p className="global-excerpt">{post.excerpt}</p>
-                <span className="global-tags">{post.tag.join(" | ")}</span>
+                <p className="global-excerpt">{post?.excerpt}</p>
+                <span className="global-tags">{post?.tag?.join(" | ")}</span>
               </Col>
               <Col
                 xl={4}
@@ -60,17 +76,19 @@ export default function BlogPost() {
                 data-aos="fade-left"
                 data-aos-duration="1500"
               >
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  title={post.title}
-                  width={post.imageWidth}
-                  height={post.imageHeight}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                  }}
-                />
+                {post?.image && (
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    title={post.title}
+                    width={post.imageWidth}
+                    height={post.imageHeight}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                  />
+                )}
               </Col>
             </Row>
           </Container>
@@ -83,7 +101,7 @@ export default function BlogPost() {
               data-aos-duration="1500"
             >
               <Col xl={10} lg={10} md={10} sm={12} xs={12}>
-                <p style={{ textAlign: "justify" }}>{post.content}</p>
+                <p style={{ textAlign: "justify" }}>{post?.content}</p>
               </Col>
             </Row>
           </Container>
@@ -96,7 +114,7 @@ export default function BlogPost() {
               data-aos-duration="1500"
             >
               <Col xl={10} lg={10} md={10} sm={12} xs={12}>
-                <p>{post.quote}</p>
+                <p>{post?.quote}</p>
               </Col>
             </Row>
           </Container>
@@ -109,7 +127,7 @@ export default function BlogPost() {
               data-aos-duration="1500"
             >
               <Col xl={10} lg={10} md={10} sm={12} xs={12}>
-                <p style={{ textAlign: "justify" }}>{post.content}</p>
+                <p style={{ textAlign: "justify" }}>{post?.content}</p>
               </Col>
             </Row>
           </Container>
@@ -160,7 +178,7 @@ export default function BlogPost() {
                             ? `/blog/${encodeURIComponent(nextPost.slug)}`
                             : "#"
                         }
-                        title={nextPost.title || "No Newer Story"}
+                        title={nextPost?.title || "No Newer Story"}
                         className="global-underline"
                       >
                         {nextPost ? nextPost.title : "No Newer Story"}
@@ -190,7 +208,7 @@ export default function BlogPost() {
                             ? `/blog/${encodeURIComponent(prevPost.slug)}`
                             : "#"
                         }
-                        title={prevPost.title || "No Older Story"}
+                        title={prevPost?.title || "No Older Story"}
                         className="global-underline"
                       >
                         {prevPost ? prevPost.title : "No Older Story"}
