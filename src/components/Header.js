@@ -1,24 +1,72 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { Nav, Container, Row, Col, Navbar } from "react-bootstrap";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
+import {
+  Nav,
+  Container,
+  Row,
+  Col,
+  Navbar,
+  Form,
+  FormControl,
+} from "react-bootstrap";
 import styles from "@/styles/Header.module.css";
-import { FaSearch } from "react-icons/fa";
+import { blogPosts } from "@/utils/blogData";
+
+// List of static pages
+const staticPages = [
+  { title: "Home", slug: "/" },
+  { title: "About", slug: "/about" },
+  { title: "Blog", slug: "/blog" },
+  { title: "Contact", slug: "/contact" },
+];
 
 const Header = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+  const router = useRouter();
+
+  // Handle search input change
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchTerm(query);
+
+    if (query.length > 0) {
+      // Filter blog posts
+      const blogResults = blogPosts.filter((blog) =>
+        blog.title.toLowerCase().includes(query.toLowerCase())
+      );
+
+      // Filter static pages
+      const pageResults = staticPages.filter((page) =>
+        page.title.toLowerCase().includes(query.toLowerCase())
+      );
+
+      // Combine results
+      const results = [...pageResults, ...blogResults];
+
+      setFilteredResults(results);
+      setShowResults(true);
+    } else {
+      setShowResults(false);
+    }
+  };
+
+  // Handle search selection
+  const handleSelect = (slug) => {
+    router.push(slug.startsWith("/") ? slug : `/blog/${slug}`);
+    setSearchTerm(""); // Clear input
+    setShowResults(false); // Hide results
+  };
+
   return (
     <>
       <div className={styles.hdr}>
         <Container className="pt-4 pb-4">
           <Row className={styles.hdrRow}>
-            <Col
-              xl={6}
-              lg={6}
-              md={12}
-              sm={12}
-              xs={12}
-              className="align-content-center"
-            >
+            <Col xl={6} lg={6} md={12} sm={12} xs={12}>
               <Link href="/" title="Ikken">
                 <Image
                   src="/ikken-logo.webp"
@@ -36,7 +84,7 @@ const Header = () => {
               md={12}
               sm={12}
               xs={12}
-              className={`align-content-center ${styles.hdrNav}`}
+              className={styles.hdrNav}
             >
               <Navbar expand="lg" className="justify-content-end">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -44,7 +92,7 @@ const Header = () => {
                   id="basic-navbar-nav"
                   className="justify-content-end"
                 >
-                  <Nav className={`ml-auto ${styles.hdrLnk}`}>
+                  <Nav className={styles.hdrLnk}>
                     <Nav.Item>
                       <Nav.Link href="/" title="Home">
                         Home
@@ -65,12 +113,41 @@ const Header = () => {
                         Contact
                       </Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link href="#" title="Search">
-                        <FaSearch
-                          style={{ fontSize: "20px", marginBottom: "10px" }}
-                        />
-                      </Nav.Link>
+
+                    {/* Search Bar */}
+                    <Nav.Item className={styles.searchContainer}>
+                      <Form className={styles.searchForm}>
+                        <div className={styles.searchInputWrapper}>
+                          <FormControl
+                            type="text"
+                            placeholder="Search..."
+                            value={searchTerm}
+                            onChange={handleSearchChange}
+                            className={styles.searchInput}
+                          />
+                        </div>
+                      </Form>
+
+                      {/* Search Results Dropdown */}
+                      {showResults && (
+                        <div className={styles.searchResults}>
+                          {filteredResults.length > 0 ? (
+                            filteredResults.map((item, index) => (
+                              <div
+                                key={index}
+                                className={styles.searchResultItem}
+                                onClick={() => handleSelect(item.slug)}
+                              >
+                                {item.title}
+                              </div>
+                            ))
+                          ) : (
+                            <div className={styles.noResults}>
+                              No results found
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </Nav.Item>
                   </Nav>
                 </Navbar.Collapse>

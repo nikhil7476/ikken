@@ -1,14 +1,102 @@
-@media only screen and (max-width: 770px) {
-  .hdrRow a img {
-    position: relative;
-    z-index: 999;
-  }
+.hdr {
+  background: #fff;
+}
 
-  .hdrNav {
-    margin-top: -10% !important;
-  }
+.hdrRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.hdrNav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hdrLnk .nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding: 8px 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+/* 🔍 Search Bar */
+.searchContainer {
+  position: relative;
+  margin-left: 15px;
+}
+
+.searchForm {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* 🔍 Search Results Dropdown */
+.searchResults {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.searchResultItem {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.searchResultItem:hover {
+  background: #f1f1f1;
+}
+
+.noResults {
+  padding: 10px;
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+}
+
+/* 📱 Responsive Styles */
+@media (max-width: 768px) {
+  .searchInputWrapper {
+    width: 180px;
+  }
+}
+
+@media (max-width: 576px) {
   .hdrLnk {
-    margin-top: 30px !important;
+    text-align: center;
+  }
+
+  .searchContainer {
+    margin: 10px 0;
   }
 }
