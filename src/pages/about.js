@@ -11,6 +11,7 @@ export default function About() {
     <>
       <Head>
         <title>About Us - Ikken</title>
+        <meta name="description" content="Exploring Ideas, One Thought at a Time" />
       </Head>
       <div className="abtMain">
         <section>

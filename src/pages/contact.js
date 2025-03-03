@@ -9,6 +9,10 @@ export default function Contact() {
     <>
       <Head>
         <title>Contact Us - Ikken</title>
+        <meta
+          name="description"
+          content="Feel free to reach out to us for any inquiries. We're here to help"
+        />
       </Head>
       <div>
         <section>

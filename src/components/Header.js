@@ -14,7 +14,6 @@ import {
 import styles from "@/styles/Header.module.css";
 import { blogPosts } from "@/utils/blogData";
 
-// List of static pages
 const staticPages = [
   { title: "Home", slug: "/" },
   { title: "About", slug: "/about" },
@@ -28,25 +27,18 @@ const Header = () => {
   const [showResults, setShowResults] = useState(false);
   const router = useRouter();
 
-  // Handle search input change
   const handleSearchChange = (e) => {
     const query = e.target.value;
     setSearchTerm(query);
 
     if (query.length > 0) {
-      // Filter blog posts
       const blogResults = blogPosts.filter((blog) =>
         blog.title.toLowerCase().includes(query.toLowerCase())
       );
-
-      // Filter static pages
       const pageResults = staticPages.filter((page) =>
         page.title.toLowerCase().includes(query.toLowerCase())
       );
-
-      // Combine results
       const results = [...pageResults, ...blogResults];
-
       setFilteredResults(results);
       setShowResults(true);
     } else {
@@ -54,11 +46,10 @@ const Header = () => {
     }
   };
 
-  // Handle search selection
   const handleSelect = (slug) => {
     router.push(slug.startsWith("/") ? slug : `/blog/${slug}`);
-    setSearchTerm(""); // Clear input
-    setShowResults(false); // Hide results
+    setSearchTerm("");
+    setShowResults(false);
   };
 
   return (
@@ -113,8 +104,6 @@ const Header = () => {
                         Contact
                       </Nav.Link>
                     </Nav.Item>
-
-                    {/* Search Bar */}
                     <Nav.Item className={styles.searchContainer}>
                       <Form className={styles.searchForm}>
                         <div className={styles.searchInputWrapper}>
@@ -127,8 +116,6 @@ const Header = () => {
                           />
                         </div>
                       </Form>
-
-                      {/* Search Results Dropdown */}
                       {showResults && (
                         <div className={styles.searchResults}>
                           {filteredResults.length > 0 ? (

@@ -11,6 +11,10 @@ const BlogPage = () => {
     <>
       <Head>
         <title>Blog - Ikken</title>
+        <meta
+          name="description"
+          content="The ideal choice for the minimal loving creative blogger"
+        />
       </Head>
       <div className={styles.blgMain}>
         <section>
@@ -46,6 +50,7 @@ const BlogPage = () => {
                       <Image
                         src={post.image}
                         alt={post.title}
+                        title={post.title}
                         width={post.imageWidth}
                         height={post.imageHeight}
                         style={{
@@ -64,14 +69,14 @@ const BlogPage = () => {
                     className="align-content-center p-4 m-0"
                   >
                     <span className="global-authors">By {post.author}</span>
-                    <h1 className="global-title">
+                    <h2 className="global-title">
                       <Link
                         href={`/blog/${encodeURIComponent(post.slug)}`}
                         className="global-underline"
                       >
                         {post.title}
                       </Link>
-                    </h1>
+                    </h2>
                     <p className="global-excerpt">{post.excerpt}</p>
                     <span className="global-tags">{post.tag.join(" | ")}</span>
                   </Col>

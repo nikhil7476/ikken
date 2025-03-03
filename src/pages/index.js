@@ -38,6 +38,7 @@ export default function Home() {
                   <Link
                     href={`/blog/${encodeURIComponent(latestPost.slug)}`}
                     className="global-underline"
+                    title={latestPost.title}
                   >
                     {latestPost.title}
                   </Link>
@@ -64,6 +65,7 @@ export default function Home() {
                   <Image
                     src={latestPost.image}
                     alt={latestPost.title}
+                    title={latestPost.title}
                     width={latestPost.imageWidth}
                     height={latestPost.imageHeight}
                     style={{
@@ -93,6 +95,7 @@ export default function Home() {
                     <Image
                       src={post.image}
                       alt={post.title}
+                      title={post.title}
                       width={post.imageWidth}
                       height={post.imageHeight}
                       style={{
@@ -115,6 +118,7 @@ export default function Home() {
                     <Link
                       href={`/blog/${encodeURIComponent(post.slug)}`}
                       className="global-underline"
+                      title={post.title}
                     >
                       {post.title}
                     </Link>
@@ -156,6 +160,7 @@ export default function Home() {
                   <Link
                     href={`/blog/${encodeURIComponent(middlePosts.slug)}`}
                     className="global-underline"
+                    title={middlePosts.title}
                   >
                     {middlePosts.title}
                   </Link>
@@ -181,6 +186,7 @@ export default function Home() {
                     <Image
                       src={post.image}
                       alt={post.title}
+                      title={post.title}
                       width={post.imageWidth}
                       height={post.imageHeight}
                       style={{
@@ -203,6 +209,7 @@ export default function Home() {
                     <Link
                       href={`/blog/${encodeURIComponent(post.slug)}`}
                       className="global-underline"
+                      title={post.title}
                     >
                       {post.title}
                     </Link>
