@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
-export default function COntact() {
+export default function Contact() {
   return (
     <>
       <Head>
