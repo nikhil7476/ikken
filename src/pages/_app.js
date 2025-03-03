@@ -41,22 +41,38 @@ export default function App({ Component, pageProps }) {
           <ul className="footer-description">
             <li>Follow:</li>
             <li>
-              <Link href="#" title="Facebook">
+              <Link
+                href="https://www.facebook.com/profile.php?id=100011219256852"
+                title="Facebook"
+                target="_blank"
+              >
                 <FiFacebook />
               </Link>
             </li>
             <li>
-              <Link href="#" title="Instagram">
+              <Link
+                href="https://www.instagram.com/mishra_nikhil01/"
+                title="Instagram"
+                target="_blank"
+              >
                 <BsInstagram />
               </Link>
             </li>
             <li>
-              <Link href="#" title="Twitter">
+              <Link
+                href="https://x.com/mishranikhil01"
+                title="Twitter"
+                target="_blank"
+              >
                 <FaXTwitter />
               </Link>
             </li>
             <li>
-              <Link href="#" title="LinkedIn">
+              <Link
+                href="https://www.linkedin.com/in/nikhil-mishra-664672180/"
+                title="LinkedIn"
+                target="_blank"
+              >
                 <FaLinkedinIn />
               </Link>
             </li>
