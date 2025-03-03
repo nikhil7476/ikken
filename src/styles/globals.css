@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   z-index: 2;
   top: 50%;
-  right: -100px;
+  right: -120px;
   max-width: fit-content;
   cursor: default;
   transform-origin: 0 0;
