@@ -17,7 +17,7 @@ export default function COntact() {
               <Col
                 xl={4}
                 lg={4}
-                md={6}
+                md={12}
                 sm={12}
                 xs={12}
                 className="p-0"
@@ -36,7 +36,7 @@ export default function COntact() {
               <Col
                 xl={8}
                 lg={8}
-                md={6}
+                md={12}
                 sm={12}
                 xs={12}
                 className="align-content-center p-4"
