@@ -123,7 +123,7 @@ export default function Home() {
                     </Link>
                   </h2>
                   <p className="global-excerpt">{post.excerpt}</p>
-                  <span className="global-tags">{post.tag}</span>
+                  <span className="global-tags">{post.tag.join(" | ")}</span>
                 </Col>
               </Row>
             ))}
@@ -165,7 +165,7 @@ export default function Home() {
                   </Link>
                 </h2>
                 <p className="global-excerpt">{middlePosts.excerpt}</p>
-                <span className="global-tags">{middlePosts.tag}</span>
+                <span className="global-tags">{middlePosts.tag.join(" | ")}</span>
               </Col>
             </Row>
           </Container>
@@ -214,7 +214,7 @@ export default function Home() {
                     </Link>
                   </h2>
                   <p className="global-excerpt">{post.excerpt}</p>
-                  <span className="global-tags">{post.tag}</span>
+                  <span className="global-tags">{post.tag.join(" | ")}</span>
                 </Col>
               </Row>
             ))}
