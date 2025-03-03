@@ -68,7 +68,7 @@ const BlogPage = () => {
                     xs={12}
                     className="align-content-center p-4 m-0"
                   >
-                    <span className="global-authors">By {post.author}</span>
+                    <span className="global-authors">By {post.author} on {post.date}</span>
                     <h2 className="global-title">
                       <Link
                         href={`/blog/${encodeURIComponent(post.slug)}`}

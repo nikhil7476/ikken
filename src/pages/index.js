@@ -32,7 +32,7 @@ export default function Home() {
                 data-aos="fade-right"
                 data-aos-duration="1500"
               >
-                <span className="global-authors">By {latestPost.author}</span>
+                <span className="global-authors">By {latestPost.author} on {latestPost.date}</span>
                 <h1 className="global-title">
                   <Link
                     href={`/blog/${encodeURIComponent(latestPost.slug)}`}
@@ -112,7 +112,7 @@ export default function Home() {
                   xs={12}
                   className="align-content-center p-4 m-0"
                 >
-                  <span className="global-authors">By {post.author}</span>
+                  <span className="global-authors">By {post.author} on {post.date}</span>
                   <h2 className="global-title">
                     <Link
                       href={`/blog/${encodeURIComponent(post.slug)}`}
@@ -154,7 +154,7 @@ export default function Home() {
                 xs={12}
                 className="align-content-center p-4 m-0 text-center"
               >
-                <span className="global-authors">By {middlePosts.author}</span>
+                <span className="global-authors">By {middlePosts.author} on {middlePosts.date}</span>
                 <h2 className="global-title">
                   <Link
                     href={`/blog/${encodeURIComponent(middlePosts.slug)}`}
@@ -203,7 +203,7 @@ export default function Home() {
                   xs={12}
                   className="align-content-center p-4 m-0"
                 >
-                  <span className="global-authors">By {post.author}</span>
+                  <span className="global-authors">By {post.author} on {post.date}</span>
                   <h2 className="global-title">
                     <Link
                       href={`/blog/${encodeURIComponent(post.slug)}`}
