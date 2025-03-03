@@ -10,6 +10,7 @@ export default function Document() {
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossOrigin="anonymous"
         />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
         <Main />
