@@ -15,7 +15,7 @@ export const blogPosts = [
         From my first coding experience to mastering frameworks and languages, every step has been rewarding. Each project has taught me something valuable, shaping me into the developer I am today. 
         Moving forward, I’m eager to keep pushing boundaries and take on more complex projects that merge creativity and functionality. This milestone isn’t the end; it’s just the beginning of new possibilities.
       `,
-    image: "/Arriving-to-a-new-milestone-in-my-career.jpeg",
+    image: "/Arriving-to-a-new-milestone-in-my-career.webp",
     imageWidth: "333",
     imageHeight: "500",
   },
@@ -35,7 +35,7 @@ export const blogPosts = [
         never make it to the market. Today, I reflect on this “99%,” as I call it – the hidden innovations. While they might never see the light of day, they are critical for pushing the boundaries 
         of creativity and inspiring future projects. Acknowledging the “99%” helps us appreciate the development process, filled with untapped creativity.
       `,
-    image: "/Look-at-life-with-the-eyes-of-a-child.jpg",
+    image: "/Look-at-life-with-the-eyes-of-a-child.webp",
     imageWidth: "768",
     imageHeight: "768",
   },
@@ -55,7 +55,7 @@ export const blogPosts = [
         Should AI be allowed in areas requiring deep empathy, like counseling or healthcare? How do we ensure algorithms don’t perpetuate existing biases? These are tough questions for today’s tech 
         community. While AI offers great potential, it's essential we handle it responsibly to avoid long-term societal issues. Navigating this ethical terrain is as challenging as developing AI itself.
       `,
-    image: "/Fashion-is-a-mirror-reflecting-the-culture.jpg",
+    image: "/Fashion-is-a-mirror-reflecting-the-culture.webp",
     imageWidth: "768",
     imageHeight: "1151",
   },
@@ -75,7 +75,7 @@ export const blogPosts = [
         is ideal for handling complex applications. Languages like JavaScript and Python are incorporating more functional aspects, with JavaScript’s map, reduce, and filter methods being a few examples. 
         As applications become more data-intensive, the predictability and scalability of functional programming make it a strong choice for modern development.
       `,
-    image: "/Everything-has-beauty-but-not-everyone-sees-it.jpg",
+    image: "/Everything-has-beauty-but-not-everyone-sees-it.webp",
     imageWidth: "768",
     imageHeight: "1152",
   },
@@ -95,7 +95,7 @@ export const blogPosts = [
         emphasizes user autonomy and data ownership. With decentralized applications (dApps) and blockchain at its core, users can control their data and interact with online services without intermediaries. 
         While still emerging, Web 3.0 holds great promise for transforming industries such as finance, healthcare, and content creation.
       `,
-    image: "/You-have-gotta-be-natural.jpg",
+    image: "/You-have-gotta-be-natural.webp",
     imageWidth: "768",
     imageHeight: "1152",
   },
@@ -115,7 +115,7 @@ export const blogPosts = [
         whether inside or outside the network, is trusted by default. Every request is verified, minimizing vulnerabilities from compromised accounts. This model is increasingly popular for remote work 
         and cloud-based environments. Zero Trust emphasizes identity verification, secure access, and minimizing access privileges, making it a powerful strategy for modern cybersecurity.
       `,
-    image: "/blog-middle.jpg",
+    image: "/blog-middle.webp",
     imageWidth: "1080",
     imageHeight: "720",
   },
@@ -135,7 +135,7 @@ export const blogPosts = [
         whether inside or outside the network, is trusted by default. Every request is verified, minimizing vulnerabilities from compromised accounts. This model is increasingly popular for remote work 
         and cloud-based environments. Zero Trust emphasizes identity verification, secure access, and minimizing access privileges, making it a powerful strategy for modern cybersecurity.
       `,
-    image: "/I-always-loved-aesthetics.jpg",
+    image: "/I-always-loved-aesthetics.webp",
     imageWidth: "768",
     imageHeight: "1024",
   },
@@ -155,7 +155,7 @@ export const blogPosts = [
         whether inside or outside the network, is trusted by default. Every request is verified, minimizing vulnerabilities from compromised accounts. This model is increasingly popular for remote work 
         and cloud-based environments. Zero Trust emphasizes identity verification, secure access, and minimizing access privileges, making it a powerful strategy for modern cybersecurity.
       `,
-    image: "/When-you-are-on-your-way-to-home.jpg",
+    image: "/When-you-are-on-your-way-to-home.webp",
     imageWidth: "768",
     imageHeight: "1152",
   },

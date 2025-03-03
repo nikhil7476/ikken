@@ -29,7 +29,7 @@ export default function Contact() {
                 data-aos-duration="1500"
               >
                 <Image
-                  src="/contact.jpeg"
+                  src="/contact.webp"
                   alt="Contact_Banner"
                   title="Contact Us"
                   width={1080}

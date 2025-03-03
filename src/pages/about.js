@@ -71,7 +71,7 @@ export default function About() {
               </Col>
               <Col xl={4} lg={4} md={4} sm={12} xs={12}>
                 <Image
-                  src="/contact.jpeg"
+                  src="/contact.webp"
                   alt="About"
                   title="About Us"
                   width={1080}
@@ -119,7 +119,7 @@ export default function About() {
           <Row className="justify-content-between">
             <Col xl={4} lg={4} md={4} sm={12} xs={12}>
               <Image
-                src="/nikhil-logo.jpeg"
+                src="/nikhil-logo.webp"
                 alt="Nikhil_Mishra"
                 title="Nikhil Mishra"
                 width={460}
