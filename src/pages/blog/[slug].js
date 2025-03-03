@@ -63,6 +63,7 @@ export default function BlogPost() {
                 <Image
                   src={post.image}
                   alt={post.title}
+                  title={post.title}
                   width={post.imageWidth}
                   height={post.imageHeight}
                   style={{
@@ -133,6 +134,7 @@ export default function BlogPost() {
                       <Image
                         src={nextPost.image}
                         alt={nextPost.title}
+                        title={nextPost.title}
                         width={nextPost.imageWidth}
                         height={nextPost.imageHeight}
                         style={{
@@ -158,6 +160,7 @@ export default function BlogPost() {
                             ? `/blog/${encodeURIComponent(nextPost.slug)}`
                             : "#"
                         }
+                        title={nextPost.title || "No Newer Story"}
                         className="global-underline"
                       >
                         {nextPost ? nextPost.title : "No Newer Story"}
@@ -187,6 +190,7 @@ export default function BlogPost() {
                             ? `/blog/${encodeURIComponent(prevPost.slug)}`
                             : "#"
                         }
+                        title={prevPost.title || "No Older Story"}
                         className="global-underline"
                       >
                         {prevPost ? prevPost.title : "No Older Story"}
@@ -205,6 +209,7 @@ export default function BlogPost() {
                       <Image
                         src={prevPost.image}
                         alt={prevPost.title}
+                        title={prevPost.title}
                         width={prevPost.imageWidth}
                         height={prevPost.imageHeight}
                         style={{
