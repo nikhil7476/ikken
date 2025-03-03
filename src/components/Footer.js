@@ -1,12 +1,6 @@
-"use client";
-
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
-import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
-import { FiFacebook } from "react-icons/fi";
-import { BsInstagram } from "react-icons/bs";
 import styles from "@/styles/Footer.module.css";
 import { useState } from "react";
-import Link from "next/link";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
