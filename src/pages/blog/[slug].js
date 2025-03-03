@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/Blog.module.css";
+import Head from "next/head";
 
 export default function BlogPost() {
   const router = useRouter();
@@ -17,6 +18,9 @@ export default function BlogPost() {
 
   return (
     <>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
       <div className={styles.single}>
         <section className={styles.banner}>
           <Container>
