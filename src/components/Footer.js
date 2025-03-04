@@ -58,7 +58,7 @@ const Footer = () => {
               <Col lg={6} md={6} sm={12} className="align-content-center">
                 <p className="mb-0 text-center">
                   Ikken &copy; {new Date().getFullYear()}. All Right Reserved.
-                  Published with Ghost & Ikken.
+                  Published By Nikhil Mishra.
                 </p>
               </Col>
             </Row>
