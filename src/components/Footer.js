@@ -1,6 +1,7 @@
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import styles from "@/styles/Footer.module.css";
 import { useState } from "react";
+import Link from "next/link";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -58,7 +59,11 @@ const Footer = () => {
               <Col lg={6} md={6} sm={12} className="align-content-center">
                 <p className="mb-0 text-center">
                   Ikken &copy; {new Date().getFullYear()}. All Right Reserved.
-                  Published By Nikhil Mishra.
+                  Published By{" "}
+                  <Link href="/about#nikhil" title="Nikhil Mishra">
+                    Nikhil Mishra
+                  </Link>
+                  .
                 </p>
               </Col>
             </Row>
