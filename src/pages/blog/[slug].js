@@ -137,7 +137,7 @@ export default function BlogPost() {
             <Row data-aos="fade-up" data-aos-duration="1500">
               <Col xl={6} lg={6} md={6} sm={12} xs={12}>
                 <Row
-                  style={{ backgroundColor: "#F9F9F9" }}
+                  style={{ backgroundColor: "#F9F9F9", height: "250px" }}
                   className="justify-content-start"
                 >
                   <Col
@@ -189,7 +189,11 @@ export default function BlogPost() {
               </Col>
               <Col xl={6} lg={6} md={6} sm={12} xs={12}>
                 <Row
-                  style={{ backgroundColor: "#F1F1F1", marginTop: "60px" }}
+                  style={{
+                    backgroundColor: "#F1F1F1",
+                    marginTop: "60px",
+                    height: "250px",
+                  }}
                   className="justify-content-end"
                 >
                   <Col
