@@ -48,9 +48,9 @@ const Footer = () => {
                 data-aos="fade-up"
                 data-aos-duration="1500"
               >
-                <h3 className={styles.heading}>
+                <h2 className={styles.heading}>
                   Subscribe to see what we're thinking
-                </h3>
+                </h2>
                 <Form onSubmit={handleSubmit} className={styles.form}>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Control
