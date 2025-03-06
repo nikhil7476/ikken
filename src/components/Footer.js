@@ -72,7 +72,7 @@ const Footer = () => {
                     {loading ? "Subscribing..." : "SUBSCRIBE"}
                   </Button>
                 </Form>
-                {message && <p className={styles.message}>{message}</p>}
+                {message && <p className="mt-4">{message}</p>}
               </Col>
             </Row>
           </Container>
