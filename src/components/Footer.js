@@ -5,11 +5,32 @@ import Link from "next/link";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Subscribed with: ${email}`);
-    setEmail("");
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+      setMessage(data.message);
+
+      if (res.status === 201) {
+        setEmail(""); // Reset input field after successful submission
+      }
+    } catch (error) {
+      setMessage("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -39,16 +60,19 @@ const Footer = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       className={`${styles.input} text-center`}
                       required
+                      disabled={loading}
                     />
                   </Form.Group>
                   <Button
                     variant="outline-dark"
                     type="submit"
                     className={styles.button}
+                    disabled={loading}
                   >
-                    SUBSCRIBE
+                    {loading ? "Subscribing..." : "SUBSCRIBE"}
                   </Button>
                 </Form>
+                {message && <p className={styles.message}>{message}</p>}
               </Col>
             </Row>
           </Container>
