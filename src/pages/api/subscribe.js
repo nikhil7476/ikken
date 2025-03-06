@@ -17,13 +17,13 @@ export default async function handler(req, res) {
   try {
     const existingSubscriber = await Subscriber.findOne({ email });
     if (existingSubscriber) {
-      return res.status(409).json({ message: "Email already subscribed" });
+      return res.status(409).json({ message: "Email Already Subscribed !!" });
     }
 
     const newSubscriber = new Subscriber({ email });
     await newSubscriber.save();
 
-    return res.status(201).json({ message: "Subscription successful" });
+    return res.status(201).json({ message: "Email Subscribed Successfully !!" });
   } catch (error) {
     return res.status(500).json({ message: "Server Error", error: error.message });
   }
