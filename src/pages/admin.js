@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import { Container, Table } from "react-bootstrap";
 
@@ -25,39 +26,54 @@ const AdminPage = () => {
   }, []);
 
   return (
-    <Container>
-      <h2 className="mt-4 text-center">Newsletter Subscribers</h2>
-      {loading ? (
-        <p className="text-center">Loading subscribers...</p>
-      ) : (
-        <Table striped bordered hover responsive className="mt-3">
-          <thead>
-            <tr>
-              <th>S.No.</th>
-              <th>Subscriber Email</th>
-              <th>Date Subscribed</th>
-            </tr>
-          </thead>
-          <tbody>
-            {subscribers.length > 0 ? (
-              subscribers.map((subscriber, index) => (
-                <tr key={subscriber._id}>
-                  <td>{index + 1}</td>
-                  <td>{subscriber.email}</td>
-                  <td>{new Date(subscriber.createdAt).toLocaleString()}</td>
-                </tr>
-              ))
+    <>
+      <Head>
+        <title>Admin - Ikken</title>
+        <meta
+          name="description"
+          content="Admin - Exploring Ideas, One Thought at a Time"
+        />
+      </Head>
+      <div>
+        <section>
+          <Container>
+            <h1 className="mt-4">Newsletter Subscribers</h1>
+            {loading ? (
+              <p className="text-center">Loading subscribers...</p>
             ) : (
-              <tr>
-                <td colSpan="3" className="text-center">
-                  No subscribers found
-                </td>
-              </tr>
+              <Table striped bordered hover responsive className="mt-3">
+                <thead>
+                  <tr>
+                    <th>S.No.</th>
+                    <th>Subscriber Email</th>
+                    <th>Date Subscribed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {subscribers.length > 0 ? (
+                    subscribers.map((subscriber, index) => (
+                      <tr key={subscriber._id}>
+                        <td>{index + 1}</td>
+                        <td>{subscriber.email}</td>
+                        <td>
+                          {new Date(subscriber.createdAt).toLocaleString()}
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="3" className="text-center">
+                        No subscribers found
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </Table>
             )}
-          </tbody>
-        </Table>
-      )}
-    </Container>
+          </Container>
+        </section>
+      </div>
+    </>
   );
 };
 
