@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
+import Link from "next/link";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import { blogPosts } from "@/utils/blogData";
 import { Container, Row, Col } from "react-bootstrap";
-import Image from "next/image";
-import Link from "next/link";
 import styles from "@/styles/Blog.module.css";
-import Head from "next/head";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function BlogPost() {
   const router = useRouter();
@@ -46,6 +47,15 @@ export default function BlogPost() {
         />
       </Head>
       <div className={styles.single}>
+        <section>
+          <Container>
+            <Row>
+              <Col>
+                <Breadcrumbs />
+              </Col>
+            </Row>
+          </Container>
+        </section>
         <section className={styles.banner}>
           <Container>
             <Row className="justify-content-between">

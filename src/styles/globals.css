@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.4;
   position: fixed;
-  z-index: 2;
+  z-index: -1;
   top: 25%;
   left: 30px;
   max-width: 400px;
