@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Container, Table } from "react-bootstrap";
 import { FaEdit } from "react-icons/fa";
@@ -8,7 +9,7 @@ export default function BlogList() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/getBlogs")
+    fetch("/api/blogs/getBlogs")
       .then((res) => res.json())
       .then((data) => {
         console.log("API Response:", data);
@@ -37,7 +38,7 @@ export default function BlogList() {
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch(`/api/deleteBlogs?slug=${slug}`, {
+      const res = await fetch(`/api/blogs/deleteBlogs?slug=${slug}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -71,10 +72,9 @@ export default function BlogList() {
                 <th>Tags</th>
                 <th>Quote</th>
                 <th>Excerpt</th>
+                <th>Slug</th>
                 <th>Content</th>
                 <th>Image</th>
-                <th>Width</th>
-                <th>Height</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -89,10 +89,18 @@ export default function BlogList() {
                     <td>{blog.tag.join(", ")}</td>
                     <td>{blog.quote}</td>
                     <td>{blog.excerpt}</td>
+                    <td>{blog.slug}</td>
                     <td>{blog.content}</td>
-                    <td>{blog.image}</td>
-                    <td>{blog.imageWidth}</td>
-                    <td>{blog.imageHeight}</td>
+                    <td>
+                      <Image
+                        src={blog.image}
+                        alt={blog.slug}
+                        title={blog.title}
+                        width={blog.imageWidth}
+                        height={blog.imageHeight}
+                        style={{ width: "100%", height: "auto" }}
+                      />
+                    </td>
                     <td
                       style={{
                         display: "flex",
