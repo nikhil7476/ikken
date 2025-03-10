@@ -139,6 +139,8 @@ h1, h2, h3, h4, h5, h6 {
 /*Media Query*/
 
 @media only screen and (max-width: 770px) {
+
+  
   .nav-link:hover {
     background-size: 20% 10% !important;
   }
@@ -146,4 +148,20 @@ h1, h2, h3, h4, h5, h6 {
   .header-description, .footer-description {
     display: none;
   }
+
+  .hdrCollapse {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    z-index: 1;
+    padding: 20px;
+  }
+
+  .hdrCollapse .nav-link {
+    text-align: left;
+  }
+
+
 }

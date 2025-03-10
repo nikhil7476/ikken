@@ -1,3 +1,8 @@
+.logo {
+  width: 25%;
+  height: auto;
+}
+
 .hdr {
   background: #fff;
 }
@@ -6,12 +11,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .hdrNav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 100%;
 }
 
 .hdrLnk .nav-link {
@@ -86,6 +93,10 @@
 
 /* 📱 Responsive Styles */
 @media (max-width: 768px) {
+  .logo {
+    width: 50%;
+  }
+
   .searchInputWrapper {
     width: 180px;
   }

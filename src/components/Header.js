@@ -57,7 +57,7 @@ const Header = () => {
       <div className={styles.hdr}>
         <Container className="pt-4 pb-4">
           <Row className={styles.hdrRow}>
-            <Col xl={6} lg={6} md={12} sm={12} xs={12}>
+            <Col>
               <Link href="/" title="Ikken">
                 <Image
                   src="/ikken-logo.webp"
@@ -65,23 +65,20 @@ const Header = () => {
                   title="Ikken"
                   width={975}
                   height={334}
-                  style={{ width: "25%", height: "auto" }}
+                  className={styles.logo}
                 />
               </Link>
             </Col>
-            <Col
-              xl={6}
-              lg={6}
-              md={12}
-              sm={12}
-              xs={12}
-              className={styles.hdrNav}
-            >
-              <Navbar expand="lg" className="justify-content-end">
+            <Col className={styles.hdrNav}>
+              <Navbar
+                expand="lg"
+                className="justify-content-end"
+                style={{ position: "inherit" }}
+              >
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse
                   id="basic-navbar-nav"
-                  className="justify-content-end"
+                  className="justify-content-end hdrCollapse"
                 >
                   <Nav className={styles.hdrLnk}>
                     <Nav.Item>
