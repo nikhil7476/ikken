@@ -80,8 +80,8 @@ export default function BlogForm() {
       <h2>Add New Blog</h2>
       {message.text && <Alert variant={message.type}>{message.text}</Alert>}
       <Form onSubmit={handleSubmit}>
-        <Row className="mb-3">
-          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+        <Row>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="author">
               <Form.Label>
                 Author<span style={{ color: "red" }}>*</span>
@@ -95,7 +95,7 @@ export default function BlogForm() {
               />
             </Form.Group>
           </Col>
-          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="title">
               <Form.Label>
                 Title<span style={{ color: "red" }}>*</span>
@@ -109,7 +109,7 @@ export default function BlogForm() {
               />
             </Form.Group>
           </Col>
-          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="slug">
               <Form.Label>
                 Slug<span style={{ color: "red" }}>*</span>
@@ -124,8 +124,8 @@ export default function BlogForm() {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-3">
-          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+        <Row>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="date">
               <Form.Label>
                 Date<span style={{ color: "red" }}>*</span>
@@ -139,7 +139,7 @@ export default function BlogForm() {
               />
             </Form.Group>
           </Col>
-          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="tag">
               <Form.Label>
                 Tags (Comma-separated)<span style={{ color: "red" }}>*</span>
@@ -153,7 +153,7 @@ export default function BlogForm() {
               />
             </Form.Group>
           </Col>
-          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="quote">
               <Form.Label>
                 Quote<span style={{ color: "red" }}>*</span>
@@ -167,8 +167,8 @@ export default function BlogForm() {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-3">
-          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+        <Row>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="image">
               <Form.Label>
                 Image URL<span style={{ color: "red" }}>*</span>
@@ -181,7 +181,7 @@ export default function BlogForm() {
               />
             </Form.Group>
           </Col>
-          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="imageWidth">
               <Form.Label>
                 Image Width<span style={{ color: "red" }}>*</span>
@@ -194,7 +194,7 @@ export default function BlogForm() {
               />
             </Form.Group>
           </Col>
-          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="imageHeight">
               <Form.Label>
                 Image Height<span style={{ color: "red" }}>*</span>
@@ -208,8 +208,8 @@ export default function BlogForm() {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-3">
-          <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+        <Row>
+          <Col xl={12} lg={12} md={12} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="excerpt">
               <Form.Label>
                 Excerpt<span style={{ color: "red" }}>*</span>
@@ -224,8 +224,8 @@ export default function BlogForm() {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="mb-3">
-          <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+        <Row>
+          <Col xl={12} lg={12} md={12} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="content">
               <Form.Label>
                 Content<span style={{ color: "red" }}>*</span>
