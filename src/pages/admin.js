@@ -9,7 +9,7 @@ const AdminPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/getSubscribers")
+    fetch("/api/newsletter/getSubscribers")
       .then((res) => res.text()) // Convert to text first
       .then((data) => {
         console.log("Raw API Response:", data); // Debugging log
