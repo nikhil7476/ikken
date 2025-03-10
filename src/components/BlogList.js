@@ -82,7 +82,7 @@ export default function BlogList() {
                 blogs.map((blog, index) => (
                   <tr key={blog._id}>
                     <td>{index + 1}</td>
-                    <td>{blog.date}</td>
+                    <td>{new Date(blog.createdAt).toLocaleString()}</td>
                     <td>{blog.title}</td>
                     <td>{blog.author}</td>
                     <td>{blog.tag.join(", ")}</td>
