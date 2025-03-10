@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Button, Alert, Container } from "react-bootstrap";
+import { Form, Button, Alert, Container, Row, Col } from "react-bootstrap";
 
 export default function BlogForm() {
   const [formData, setFormData] = useState({
@@ -80,123 +80,167 @@ export default function BlogForm() {
       <h2>Add New Blog</h2>
       {message.text && <Alert variant={message.type}>{message.text}</Alert>}
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="author">
-          <Form.Label>Author</Form.Label>
-          <Form.Control
-            type="text"
-            name="author"
-            value={formData.author}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
-
-        <Form.Group controlId="title">
-          <Form.Label>Title</Form.Label>
-          <Form.Control
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
-
-        <Form.Group controlId="slug">
-          <Form.Label>Slug</Form.Label>
-          <Form.Control
-            type="text"
-            name="slug"
-            value={formData.slug}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
-
-        <Form.Group controlId="date">
-          <Form.Label>Date</Form.Label>
-          <Form.Control
-            type="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
-
-        <Form.Group controlId="tag">
-          <Form.Label>Tags (comma-separated)</Form.Label>
-          <Form.Control
-            type="text"
-            name="tag"
-            value={formData.tag}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
-
-        <Form.Group controlId="quote">
-          <Form.Label>Quote</Form.Label>
-          <Form.Control
-            type="text"
-            name="quote"
-            value={formData.quote}
-            onChange={handleChange}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="excerpt">
-          <Form.Label>Excerpt</Form.Label>
-          <Form.Control
-            type="text"
-            name="excerpt"
-            value={formData.excerpt}
-            onChange={handleChange}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="content">
-          <Form.Label>Content</Form.Label>
-          <Form.Control
-            as="textarea"
-            rows={4}
-            name="content"
-            value={formData.content}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
-
-        <Form.Group controlId="image">
-          <Form.Label>Image URL</Form.Label>
-          <Form.Control
-            type="text"
-            name="image"
-            value={formData.image}
-            onChange={handleChange}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="imageWidth">
-          <Form.Label>Image Width</Form.Label>
-          <Form.Control
-            type="text"
-            name="imageWidth"
-            value={formData.imageWidth}
-            onChange={handleChange}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="imageHeight">
-          <Form.Label>Image Height</Form.Label>
-          <Form.Control
-            type="text"
-            name="imageHeight"
-            value={formData.imageHeight}
-            onChange={handleChange}
-          />
-        </Form.Group>
-
+        <Row className="mb-3">
+          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+            <Form.Group controlId="author">
+              <Form.Label>
+                Author<span style={{ color: "red" }}>*</span>
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="author"
+                value={formData.author}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+            <Form.Group controlId="title">
+              <Form.Label>
+                Title<span style={{ color: "red" }}>*</span>
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+            <Form.Group controlId="slug">
+              <Form.Label>
+                Slug<span style={{ color: "red" }}>*</span>
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="slug"
+                value={formData.slug}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row className="mb-3">
+          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+            <Form.Group controlId="date">
+              <Form.Label>
+                Date<span style={{ color: "red" }}>*</span>
+              </Form.Label>
+              <Form.Control
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+            <Form.Group controlId="tag">
+              <Form.Label>
+                Tags (Comma-separated)<span style={{ color: "red" }}>*</span>
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="tag"
+                value={formData.tag}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+            <Form.Group controlId="quote">
+              <Form.Label>
+                Quote<span style={{ color: "red" }}>*</span>
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="quote"
+                value={formData.quote}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row className="mb-3">
+          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+            <Form.Group controlId="image">
+              <Form.Label>
+                Image URL<span style={{ color: "red" }}>*</span>
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="image"
+                value={formData.image}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+            <Form.Group controlId="imageWidth">
+              <Form.Label>
+                Image Width<span style={{ color: "red" }}>*</span>
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="imageWidth"
+                value={formData.imageWidth}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+          <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+            <Form.Group controlId="imageHeight">
+              <Form.Label>
+                Image Height<span style={{ color: "red" }}>*</span>
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="imageHeight"
+                value={formData.imageHeight}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row className="mb-3">
+          <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+            <Form.Group controlId="excerpt">
+              <Form.Label>
+                Excerpt<span style={{ color: "red" }}>*</span>
+              </Form.Label>
+              <Form.Control
+                type="text"
+                name="excerpt"
+                value={formData.excerpt}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row className="mb-3">
+          <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+            <Form.Group controlId="content">
+              <Form.Label>
+                Content<span style={{ color: "red" }}>*</span>
+              </Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={4}
+                name="content"
+                value={formData.content}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+        </Row>
         <Button
           variant="primary"
           type="submit"
