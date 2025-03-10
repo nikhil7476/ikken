@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Container, Table } from "react-bootstrap";
-import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 export default function BlogList() {
@@ -101,14 +100,7 @@ export default function BlogList() {
                         style={{ width: "100%", height: "auto" }}
                       />
                     </td>
-                    <td
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-evenly",
-                        alignItems: "center",
-                      }}
-                    >
-                      <FaEdit />
+                    <td className="text-center">
                       <MdDelete
                         style={{ color: "red", cursor: "pointer" }}
                         onClick={() => handleDelete(blog.slug)}
