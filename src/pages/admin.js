@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { Container, Table } from "react-bootstrap";
+import BlogList from "@/components/BlogList";
+import BlogForm from "@/components/BlogForm";
 
 const AdminPage = () => {
   const [subscribers, setSubscribers] = useState([]);
@@ -37,7 +39,13 @@ const AdminPage = () => {
       <div>
         <section>
           <Container>
-            <h1 className="mt-4">Newsletter Subscribers</h1>
+            <BlogForm />
+          </Container>
+        </section>
+        <BlogList />
+        <section>
+          <Container>
+            <h2 className="mt-4">Newsletter Subscribers</h2>
             {loading ? (
               <p className="text-center">Loading subscribers...</p>
             ) : (
