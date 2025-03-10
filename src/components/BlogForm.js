@@ -36,7 +36,7 @@ export default function BlogForm() {
     };
 
     try {
-      const res = await fetch("/api/addBlogs", {
+      const res = await fetch("/api/blogs/addBlogs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(blogData),
