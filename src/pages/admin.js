@@ -20,7 +20,7 @@ const AdminPage = () => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // Ensures the component renders only on the client
+    setIsClient(true);
     const adminStatus = sessionStorage.getItem("isAdmin");
     if (!adminStatus) {
       router.push("/login");
@@ -43,7 +43,7 @@ const AdminPage = () => {
   };
 
   if (!isClient || !isAdmin) {
-    return null; // Avoids hydration mismatch by preventing SSR rendering
+    return null;
   }
 
   return (
@@ -90,7 +90,7 @@ const AdminPage = () => {
                       <Nav.Link eventKey="second">Blog List</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Newsletter</Nav.Link>
+                      <Nav.Link eventKey="third">Newsletters</Nav.Link>
                     </Nav.Item>
                   </Nav>
                 </Col>
