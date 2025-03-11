@@ -77,7 +77,6 @@ export default function BlogForm() {
 
   return (
     <Container className="mt-4">
-      <h2>Add New Blog</h2>
       {message.text && <Alert variant={message.type}>{message.text}</Alert>}
       <Form onSubmit={handleSubmit}>
         <Row>

@@ -57,7 +57,6 @@ export default function BlogList() {
   return (
     <section>
       <Container>
-        <h2 className="mt-4">Blog List</h2>
         {loading ? (
           <p className="text-center">Loading blogs...</p>
         ) : (

@@ -115,6 +115,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Header CSS*/
 
+.nav-link.active {
+  transition: background-size 0.6s ease-out !important;
+  background: linear-gradient(#ff6dc4, #ff6dc4) no-repeat left 87% / 0 10% !important;
+  background-size: 100% 10% !important;
+  
+}
+
 .nav-link {
   font-family: var(--font-josefin-sans) !important;
   font-size: 20px !important;

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import { Container, Table } from "react-bootstrap";
+import { Container, Table, Row, Col, Tab, Nav } from "react-bootstrap";
 import BlogList from "@/components/BlogList";
 import BlogForm from "@/components/BlogForm";
 
@@ -37,48 +37,70 @@ const AdminPage = () => {
         />
       </Head>
       <div>
-        <section>
-          <Container>
-            <BlogForm />
-          </Container>
-        </section>
-        <BlogList />
-        <section>
-          <Container>
-            <h2 className="mt-4">Newsletter Subscribers</h2>
-            {loading ? (
-              <p className="text-center">Loading subscribers...</p>
-            ) : (
-              <Table striped bordered hover responsive className="mt-3">
-                <thead>
-                  <tr>
-                    <th>S.No.</th>
-                    <th>Subscriber Email</th>
-                    <th>Date Subscribed</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {subscribers.length > 0 ? (
-                    subscribers.map((subscriber, index) => (
-                      <tr key={subscriber._id}>
-                        <td>{index + 1}</td>
-                        <td>{subscriber.email}</td>
-                        <td>
-                          {new Date(subscriber.createdAt).toLocaleString()}
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan="3" className="text-center">
-                        No subscribers found
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </Table>
-            )}
-          </Container>
+        <section className="mb-4">
+          <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+            <Row>
+              <Col sm={2}  className="mt-3 border">
+                <Nav variant="pills" className="flex-column">
+                  <Nav.Item>
+                    <Nav.Link eventKey="first">Add Blog</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="second">Blog List</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="third">Newsletter</Nav.Link>
+                  </Nav.Item>
+                </Nav>
+              </Col>
+              <Col sm={10}>
+                <Tab.Content>
+                  <Tab.Pane eventKey="first">
+                    <BlogForm />
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="second">
+                    <BlogList />
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="third">
+                    {loading ? (
+                      <p className="text-center">Loading subscribers...</p>
+                    ) : (
+                      <Table striped bordered hover responsive className="mt-3">
+                        <thead>
+                          <tr>
+                            <th>S.No.</th>
+                            <th>Subscriber Email</th>
+                            <th>Date Subscribed</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {subscribers.length > 0 ? (
+                            subscribers.map((subscriber, index) => (
+                              <tr key={subscriber._id}>
+                                <td>{index + 1}</td>
+                                <td>{subscriber.email}</td>
+                                <td>
+                                  {new Date(
+                                    subscriber.createdAt
+                                  ).toLocaleString()}
+                                </td>
+                              </tr>
+                            ))
+                          ) : (
+                            <tr>
+                              <td colSpan="3" className="text-center">
+                                No subscribers found
+                              </td>
+                            </tr>
+                          )}
+                        </tbody>
+                      </Table>
+                    )}
+                  </Tab.Pane>
+                </Tab.Content>
+              </Col>
+            </Row>
+          </Tab.Container>
         </section>
       </div>
     </>
