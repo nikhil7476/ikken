@@ -68,7 +68,7 @@ const AdminPage = () => {
                 md={6}
                 sm={12}
                 xs={12}
-                className="text-right align-content-center"
+                className="text-end align-content-center"
               >
                 <Button variant="danger" onClick={handleLogout}>
                   Logout
