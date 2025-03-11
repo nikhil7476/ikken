@@ -1,5 +1,6 @@
 import { Container, Table } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import { MdDelete } from "react-icons/md";
 
 export default function NewsletterList() {
   const [subscribers, setSubscribers] = useState([]);
@@ -24,6 +25,32 @@ export default function NewsletterList() {
       });
   }, []);
 
+  const handleDelete = async (email) => {
+    if (!window.confirm("Are you sure you want to unsubscribe this email?"))
+      return;
+
+    try {
+      const response = await fetch("/api/newsletter/deleteSubscriber", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubscribers((prev) =>
+          prev.filter((subscriber) => subscriber.email !== email)
+        );
+        alert(result.message);
+      } else {
+        alert(result.message);
+      }
+    } catch (error) {
+      console.error("Error unsubscribing:", error);
+    }
+  };
+
   return (
     <Container>
       {loading ? (
@@ -35,6 +62,7 @@ export default function NewsletterList() {
               <th>S.No.</th>
               <th>Subscriber Email</th>
               <th>Date Subscribed</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -44,6 +72,12 @@ export default function NewsletterList() {
                   <td>{index + 1}</td>
                   <td>{subscriber.email}</td>
                   <td>{new Date(subscriber.createdAt).toLocaleString()}</td>
+                  <td className="text-center">
+                    <MdDelete
+                      style={{ color: "red", cursor: "pointer" }}
+                      onClick={() => handleDelete(subscriber.email)}
+                    />
+                  </td>
                 </tr>
               ))
             ) : (
