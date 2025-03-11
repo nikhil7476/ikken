@@ -81,13 +81,13 @@ export default function ContactList() {
                     <td>{new Date(contact.createdAt).toLocaleString()}</td>
                     <td>{contact.name}</td>
                     <td>{contact.email}</td>
-                    <td>{blog.phone}</td>
-                    <td>{blog.subject}</td>
-                    <td>{blog.message_content}</td>
+                    <td>{contact.phone}</td>
+                    <td>{contact.subject}</td>
+                    <td>{contact.message_content}</td>
                     <td className="text-center">
                       <MdDelete
                         style={{ color: "red", cursor: "pointer" }}
-                        onClick={() => handleDelete(blog.slug)}
+                        onClick={() => handleDelete(contact.email)}
                       />
                     </td>
                   </tr>
