@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     if (existingContact) {
       return res
         .status(409)
-        .json({ message: "EMail already exists. Please use a unique email." });
+        .json({ message: "Email already exists. Please use a unique email." });
     }
 
     const newContact = new Contact({
