@@ -6,25 +6,25 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method Not Allowed" });
   }
 
-  await connectDB();
+  try {
+    await connectDB();
+  } catch (error) {
+    console.error("Database connection error:", error);
+    return res
+      .status(500)
+      .json({ message: "Database connection failed", error: error.message });
+  }
 
-  const { name, email, phone, subject, message_content } = req.body;
+  const { name, email, phone, subject, message_content } = req.body; // Updated key to match schema
 
   if (!name || !email || !phone || !subject || !message_content) {
     return res.status(400).json({
       message:
-        "Missing required fields: name, email, phone, subject, or message",
+        "Missing required fields: name, email, phone, subject, or message_content",
     });
   }
 
   try {
-    const existingContact = await Contact.findOne({ email });
-    if (existingContact) {
-      return res
-        .status(409)
-        .json({ message: "Email already exists. Please use a unique email." });
-    }
-
     const newContact = new Contact({
       name,
       email,
