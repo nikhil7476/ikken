@@ -42,17 +42,19 @@ const AdminPage = () => {
                   </Nav>
                 </Col>
                 <Col sm={10}>
-                  <Tab.Content>
-                    <Tab.Pane eventKey="first">
-                      <BlogForm />
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="second">
-                      <BlogList />
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <NewsletterList />
-                    </Tab.Pane>
-                  </Tab.Content>
+                  <div className="adminDash">
+                    <Tab.Content>
+                      <Tab.Pane eventKey="first">
+                        <BlogForm />
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="second">
+                        <BlogList />
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="third">
+                        <NewsletterList />
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </div>
                 </Col>
               </Row>
             </Tab.Container>
