@@ -10,10 +10,10 @@ const AdminPage = () => {
 
   useEffect(() => {
     fetch("/api/newsletter/getSubscribers")
-      .then((res) => res.text()) // Convert to text first
+      .then((res) => res.text())
       .then((data) => {
-        console.log("Raw API Response:", data); // Debugging log
-        return JSON.parse(data); // Convert to JSON
+        console.log("Raw API Response:", data);
+        return JSON.parse(data);
       })
       .then((json) => {
         if (json.success) {
