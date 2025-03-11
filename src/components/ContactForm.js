@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Form, Button, Alert, Container, Row, Col } from "react-bootstrap";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,14 +13,23 @@ export default function ContactForm() {
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
+  const [verified, setVerified] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleRecaptchaChange = (value) => {
+    setVerified(!!value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!verified) {
+      setMessage({ type: "danger", text: "Please complete the reCAPTCHA verification" });
+      return;
+    }
     setLoading(true);
     setMessage({ type: "", text: "" });
 
@@ -145,11 +155,19 @@ export default function ContactForm() {
             </Form.Group>
           </Col>
         </Row>
+        <Row className="mt-3">
+          <Col>
+            <ReCAPTCHA
+              sitekey="6LfkZPEqAAAAAL_9apEwIanwXyjPHFXhpFGpWzjk"
+              onChange={handleRecaptchaChange}
+            />
+          </Col>
+        </Row>
         <Button
           variant="secondary"
           type="submit"
           className="mt-3"
-          disabled={loading}
+          disabled={loading || !verified}
         >
           {loading ? "Submitting..." : "Submit Your Views"}
         </Button>
