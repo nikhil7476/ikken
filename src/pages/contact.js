@@ -68,7 +68,7 @@ export default function Contact() {
                     className="align-content-center"
                   >
                     <div className="p-4">
-                      <h2>Visit Us</h2>
+                      <h2>Reach Out to Us</h2>
                       <p>
                         Feel free to reach out to us for any inquiries.{" "}
                         {"We're"} here to help
