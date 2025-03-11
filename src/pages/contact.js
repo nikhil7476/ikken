@@ -39,7 +39,7 @@ export default function Contact() {
                 />
               </Col>
               <Col
-                className="align-content-center p-4"
+                className="p-2"
                 data-aos="fade-left"
                 data-aos-duration="1500"
               >
