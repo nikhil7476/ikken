@@ -243,7 +243,7 @@ export default function BlogForm() {
           </Col>
         </Row>
         <Button
-          variant="primary"
+          variant="success"
           type="submit"
           className="mt-3"
           disabled={loading}
