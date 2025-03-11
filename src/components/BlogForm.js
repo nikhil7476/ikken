@@ -29,7 +29,6 @@ export default function BlogForm() {
     setLoading(true);
     setMessage({ type: "", text: "" });
 
-    // Convert comma-separated tags into an array
     const blogData = {
       ...formData,
       tag: formData.tag.split(",").map((tag) => tag.trim()),
