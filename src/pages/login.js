@@ -95,7 +95,7 @@ export default function AdminLogin() {
             </Form.Group>
 
             <Button
-              variant="primary"
+              variant="secondary"
               type="submit"
               disabled={loading}
               className="w-100"
