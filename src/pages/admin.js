@@ -1,10 +1,51 @@
 import Head from "next/head";
-import { Row, Col, Tab, Nav, Accordion, Container } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Tab,
+  Nav,
+  Accordion,
+  Container,
+  Button,
+} from "react-bootstrap";
 import BlogList from "@/components/BlogList";
 import BlogForm from "@/components/BlogForm";
 import NewsletterList from "@/components/NewsletterList";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const AdminPage = () => {
+  const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Ensures the component renders only on the client
+    const adminStatus = sessionStorage.getItem("isAdmin");
+    if (!adminStatus) {
+      router.push("/login");
+    } else {
+      setIsAdmin(true);
+    }
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("/api/auth/logout", { method: "POST" });
+
+      if (response.ok) {
+        sessionStorage.removeItem("isAdmin");
+        router.replace("/");
+      }
+    } catch (error) {
+      console.error("Logout failed", error);
+    }
+  };
+
+  if (!isClient || !isAdmin) {
+    return null; // Avoids hydration mismatch by preventing SSR rendering
+  }
+
   return (
     <>
       <Head>
@@ -17,9 +58,21 @@ const AdminPage = () => {
       <div>
         <section>
           <Container>
-            <Row>
-              <Col>
+            <Row className="mb-2 mt-2">
+              <Col xl={6} lg={6} md={6} sm={12} xs={12}>
                 <h1>Admin Dashboard</h1>
+              </Col>
+              <Col
+                xl={6}
+                lg={6}
+                md={6}
+                sm={12}
+                xs={12}
+                className="text-right align-content-center"
+              >
+                <Button variant="danger" onClick={handleLogout}>
+                  Logout
+                </Button>
               </Col>
             </Row>
           </Container>
