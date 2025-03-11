@@ -18,13 +18,6 @@ export default async function handler(req, res) {
   }
 
   try {
-    const existingContact = await Contact.findOne({ email });
-    if (existingContact) {
-      return res
-        .status(409)
-        .json({ message: "EMail already exists. Please use a unique email." });
-    }
-
     const newContact = new Contact({
       name,
       email,
