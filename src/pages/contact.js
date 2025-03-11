@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import ContactForm from "@/components/ContactForm";
 
 export default function Contact() {
   return (
@@ -38,15 +39,25 @@ export default function Contact() {
                 />
               </Col>
               <Col
-                xl={8}
-                lg={8}
-                md={12}
-                sm={12}
-                xs={12}
                 className="align-content-center p-4"
                 data-aos="fade-left"
                 data-aos-duration="1500"
               >
+                <h1>Contact Us</h1>
+                <p>
+                  Ready to take your views to the next level? Provide the
+                  necessary details in the form, and our dedicated team will
+                  reach out promptly.
+                </p>
+                <ContactForm />
+              </Col>
+            </Row>
+          </Container>
+        </section>
+        <section>
+          <Container data-aos="fade-up" data-aos-duration="1500">
+            <Row>
+              <Col className="align-content-center">
                 <Row className="mt-4 mb-4">
                   <Col
                     xl={6}
@@ -57,7 +68,7 @@ export default function Contact() {
                     className="align-content-center"
                   >
                     <div className="p-4">
-                      <h1>Contact Us</h1>
+                      <h2>Visit Us</h2>
                       <p>
                         Feel free to reach out to us for any inquiries.{" "}
                         {"We're"} here to help

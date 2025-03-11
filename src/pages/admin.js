@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import {
   Row,
   Col,
@@ -11,8 +13,7 @@ import {
 import BlogList from "@/components/BlogList";
 import BlogForm from "@/components/BlogForm";
 import NewsletterList from "@/components/NewsletterList";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import ContactList from "@/components/ContactList";
 
 const AdminPage = () => {
   const router = useRouter();
@@ -92,6 +93,9 @@ const AdminPage = () => {
                     <Nav.Item>
                       <Nav.Link eventKey="third">Newsletters</Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="fourth">Contact List</Nav.Link>
+                    </Nav.Item>
                   </Nav>
                 </Col>
                 <Col sm={10}>
@@ -105,6 +109,9 @@ const AdminPage = () => {
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
                         <NewsletterList />
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="fourth">
+                        <ContactList />
                       </Tab.Pane>
                     </Tab.Content>
                   </div>
@@ -132,6 +139,12 @@ const AdminPage = () => {
                 <Accordion.Header>Newsletter</Accordion.Header>
                 <Accordion.Body>
                   <NewsletterList />
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="3">
+                <Accordion.Header>Contacts</Accordion.Header>
+                <Accordion.Body>
+                  <ContactList />
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
