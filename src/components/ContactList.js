@@ -65,6 +65,7 @@ export default function ContactList() {
             <thead>
               <tr>
                 <th>S.No.</th>
+                <th>Date</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
