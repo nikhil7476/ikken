@@ -5,8 +5,8 @@ export default function handler(req, res) {
 
   const { username, password } = req.body;
 
-  const ADMIN_USERNAME = "admin";
-  const ADMIN_PASSWORD = "password123";
+  const ADMIN_USERNAME = "nikhil@gmail.com";
+  const ADMIN_PASSWORD = "Nikhil@123";
 
   if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
     return res.status(200).json({ success: true, message: "Login successful" });
