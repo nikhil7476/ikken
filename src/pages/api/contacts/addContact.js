@@ -8,12 +8,12 @@ export default async function handler(req, res) {
 
   await connectDB();
 
-  const { name, email, phone, subject, message_body } = req.body;
+  const { name, email, phone, subject, message_content } = req.body;
 
-  if (!name || !email || !phone || !subject || !message_body) {
+  if (!name || !email || !phone || !subject || !message_content) {
     return res.status(400).json({
       message:
-        "Missing required fields: name, email, phone, subject, or message_body",
+        "Missing required fields: name, email, phone, subject, or message",
     });
   }
 
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       email,
       phone,
       subject,
-      message_body,
+      message_content,
     });
 
     await newContact.save();
