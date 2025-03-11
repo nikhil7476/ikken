@@ -73,6 +73,8 @@ export default function BlogList() {
                 <th>Slug</th>
                 <th>Content</th>
                 <th>Image</th>
+                <th>Width</th>
+                <th>Height</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -99,6 +101,8 @@ export default function BlogList() {
                         style={{ width: "100%", height: "auto" }}
                       />
                     </td>
+                    <td>{blog.imageWidth}px</td>
+                    <td>{blog.imageHeight}px</td>
                     <td className="text-center">
                       <MdDelete
                         style={{ color: "red", cursor: "pointer" }}
