@@ -23,8 +23,12 @@ export default async function handler(req, res) {
     const newSubscriber = new Subscriber({ email });
     await newSubscriber.save();
 
-    return res.status(201).json({ message: "Email Subscribed Successfully !!" });
+    return res
+      .status(201)
+      .json({ message: "Email Subscribed Successfully !!" });
   } catch (error) {
-    return res.status(500).json({ message: "Server Error", error: error.message });
+    return res
+      .status(500)
+      .json({ message: "Server Error", error: error.message });
   }
 }
