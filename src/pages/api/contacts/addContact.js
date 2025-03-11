@@ -1,5 +1,5 @@
 import connectDB from "@/lib/mongodb";
-import Contact from "@/models/Contact";
+import UserData from "@/models/UserData";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -25,7 +25,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const newContact = new Contact({
+    const newUserData = new UserData({
       name,
       email,
       phone,
@@ -33,11 +33,11 @@ export default async function handler(req, res) {
       message_content,
     });
 
-    await newContact.save();
+    await newUserData.save();
 
-    return res.status(201).json({ success: true, data: newContact });
+    return res.status(201).json({ success: true, data: newUserData });
   } catch (err) {
-    console.error("Error creating contact post:", err);
+    console.error("Error creating User Data:", err);
     return res
       .status(500)
       .json({ message: "Internal Server Error", error: err.message });

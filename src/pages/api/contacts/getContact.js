@@ -1,5 +1,5 @@
 import connectDB from "@/lib/mongodb";
-import Contact from "@/models/Contact";
+import UserData from "@/models/UserData";
 
 export default async function handler(req, res) {
   if (req.method !== "GET") {
@@ -8,10 +8,10 @@ export default async function handler(req, res) {
 
   try {
     await connectDB();
-    const contacts = await Contact.find();
-    return res.status(200).json({ success: true, data: contacts });
+    const userDatas = await UserData.find();
+    return res.status(200).json({ success: true, data: userDatas });
   } catch (error) {
-    console.error("❌ Error fetching blogs:", error);
+    console.error("❌ Error fetching user details:", error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 }
