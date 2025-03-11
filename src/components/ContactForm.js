@@ -130,14 +130,14 @@ export default function ContactForm() {
         </Row>
         <Row>
           <Col xl={12} lg={12} md={12} sm={12} xs={12} className="mb-2">
-            <Form.Group controlId="message">
+            <Form.Group controlId="message_content">
               <Form.Label>
                 Message<span style={{ color: "red" }}>*</span>
               </Form.Label>
               <Form.Control
                 as="textarea"
                 rows={4}
-                name="message"
+                name="message_content"
                 value={formData.message_content}
                 onChange={handleChange}
                 required
