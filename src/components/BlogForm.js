@@ -184,7 +184,8 @@ export default function BlogForm() {
           <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="imageWidth">
               <Form.Label>
-                Image Width<span style={{ color: "red" }}>*</span>
+                Image Width {"(in px)"}
+                <span style={{ color: "red" }}>*</span>
               </Form.Label>
               <Form.Control
                 type="text"
@@ -197,7 +198,8 @@ export default function BlogForm() {
           <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="imageHeight">
               <Form.Label>
-                Image Height<span style={{ color: "red" }}>*</span>
+                Image Height {"(in px)"}
+                <span style={{ color: "red" }}>*</span>
               </Form.Label>
               <Form.Control
                 type="text"
