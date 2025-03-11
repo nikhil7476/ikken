@@ -38,6 +38,7 @@ const AdminPage = () => {
       </Head>
       <div>
         <section className="mb-4">
+          <h1>Admin Dashboard</h1>
           <Tab.Container id="left-tabs-example" defaultActiveKey="first">
             <Row>
               <Col sm={2}  className="mt-3 border">
