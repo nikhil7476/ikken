@@ -120,7 +120,7 @@ export default function About() {
         <section id="nikhil">
           <Container data-aos="fade-up" data-aos-duration="1500">
             <Row className="justify-content-between">
-              <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+              <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-3">
                 <Image
                   src="/nikhil-logo.webp"
                   alt="Nikhil_Mishra"
@@ -136,7 +136,7 @@ export default function About() {
                 md={8}
                 sm={12}
                 xs={12}
-                className="align-content-center"
+                className="align-content-center mb-3"
               >
                 <div style={{ textAlign: "justify" }}>
                   <h2>Meet the Author</h2>
