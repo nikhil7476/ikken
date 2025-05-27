@@ -18,16 +18,68 @@ export default function BlogForm() {
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
+  const [fieldErrors, setFieldErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setMessage({ type: "", text: "" });
+
+  //   const blogData = {
+  //     ...formData,
+  //     tag: formData.tag.split(",").map((tag) => tag.trim()),
+  //   };
+
+  //   try {
+  //     const res = await fetch("/api/blogs/addBlogs", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(blogData),
+  //     });
+
+  //     const data = await res.json();
+
+  //     if (res.ok) {
+  //       setMessage({ type: "success", text: "Blog added successfully!" });
+  //       setFormData({
+  //         author: "",
+  //         title: "",
+  //         slug: "",
+  //         date: "",
+  //         tag: "",
+  //         quote: "",
+  //         excerpt: "",
+  //         content: "",
+  //         image: "",
+  //         imageWidth: "",
+  //         imageHeight: "",
+  //       });
+  //     } else {
+  //       setMessage({
+  //         type: "danger",
+  //         text: data.message || "Failed to add blog",
+  //       });
+  //     }
+  //   } catch (error) {
+  //     setMessage({
+  //       type: "danger",
+  //       text: "An error occurred. Please try again.",
+  //     });
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setMessage({ type: "", text: "" });
+    setFieldErrors({});
 
     const blogData = {
       ...formData,
@@ -58,16 +110,18 @@ export default function BlogForm() {
           imageWidth: "",
           imageHeight: "",
         });
+        setFieldErrors({});
       } else {
         setMessage({
           type: "danger",
           text: data.message || "Failed to add blog",
         });
+        setFieldErrors(data.errors || {});
       }
     } catch (error) {
       setMessage({
         type: "danger",
-        text: "An error occurred. Please try again.",
+        text: "A network error occurred. Please try again.",
       });
     } finally {
       setLoading(false);
@@ -90,8 +144,12 @@ export default function BlogForm() {
                 value={formData.author}
                 onChange={handleChange}
                 required
+                isInvalid={!!fieldErrors.author}
               />
             </Form.Group>
+            <Form.Control.Feedback type="invalid">
+              {fieldErrors.author}
+            </Form.Control.Feedback>
           </Col>
           <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="title">
@@ -103,9 +161,13 @@ export default function BlogForm() {
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
+                isInvalid={!!fieldErrors.title}
                 required
               />
             </Form.Group>
+            <Form.Control.Feedback type="invalid">
+              {fieldErrors.title}
+            </Form.Control.Feedback>
           </Col>
           <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="slug">
@@ -117,9 +179,13 @@ export default function BlogForm() {
                 name="slug"
                 value={formData.slug}
                 onChange={handleChange}
+                isInvalid={!!fieldErrors.slug}
                 required
               />
             </Form.Group>
+            <Form.Control.Feedback type="invalid">
+              {fieldErrors.slug}
+            </Form.Control.Feedback>
           </Col>
         </Row>
         <Row>
@@ -133,9 +199,13 @@ export default function BlogForm() {
                 name="date"
                 value={formData.date}
                 onChange={handleChange}
+                isInvalid={!!fieldErrors.date}
                 required
               />
             </Form.Group>
+            <Form.Control.Feedback type="invalid">
+              {fieldErrors.date}
+            </Form.Control.Feedback>
           </Col>
           <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="tag">
@@ -147,9 +217,13 @@ export default function BlogForm() {
                 name="tag"
                 value={formData.tag}
                 onChange={handleChange}
+                isInvalid={!!fieldErrors.tag}
                 required
               />
             </Form.Group>
+            <Form.Control.Feedback type="invalid">
+              {fieldErrors.tag}
+            </Form.Control.Feedback>
           </Col>
           <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="quote">
@@ -161,8 +235,12 @@ export default function BlogForm() {
                 name="quote"
                 value={formData.quote}
                 onChange={handleChange}
+                isInvalid={!!fieldErrors.quote}
               />
             </Form.Group>
+            <Form.Control.Feedback type="invalid">
+              {fieldErrors.quote}
+            </Form.Control.Feedback>
           </Col>
         </Row>
         <Row>
@@ -176,8 +254,12 @@ export default function BlogForm() {
                 name="image"
                 value={formData.image}
                 onChange={handleChange}
+                isInvalid={!!fieldErrors.image}
               />
             </Form.Group>
+            <Form.Control.Feedback type="invalid">
+              {fieldErrors.image}
+            </Form.Control.Feedback>
           </Col>
           <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="imageWidth">
@@ -190,8 +272,12 @@ export default function BlogForm() {
                 name="imageWidth"
                 value={formData.imageWidth}
                 onChange={handleChange}
+                isInvalid={!!fieldErrors.imageWidth}
               />
             </Form.Group>
+            <Form.Control.Feedback type="invalid">
+              {fieldErrors.imageWidth}
+            </Form.Control.Feedback>
           </Col>
           <Col xl={4} lg={4} md={4} sm={12} xs={12} className="mb-2">
             <Form.Group controlId="imageHeight">
@@ -204,8 +290,12 @@ export default function BlogForm() {
                 name="imageHeight"
                 value={formData.imageHeight}
                 onChange={handleChange}
+                isInvalid={!!fieldErrors.imageHeight}
               />
             </Form.Group>
+            <Form.Control.Feedback type="invalid">
+              {fieldErrors.imageHeight}
+            </Form.Control.Feedback>
           </Col>
         </Row>
         <Row>
@@ -219,9 +309,13 @@ export default function BlogForm() {
                 name="excerpt"
                 value={formData.excerpt}
                 onChange={handleChange}
+                isInvalid={!!fieldErrors.excerpt}
                 required
               />
             </Form.Group>
+            <Form.Control.Feedback type="invalid">
+              {fieldErrors.excerpt}
+            </Form.Control.Feedback>
           </Col>
         </Row>
         <Row>
@@ -236,9 +330,13 @@ export default function BlogForm() {
                 name="content"
                 value={formData.content}
                 onChange={handleChange}
+                isInvalid={!!fieldErrors.content}
                 required
               />
             </Form.Group>
+            <Form.Control.Feedback type="invalid">
+              {fieldErrors.content}
+            </Form.Control.Feedback>
           </Col>
         </Row>
         <Button
